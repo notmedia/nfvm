@@ -1,0 +1,32 @@
+{
+  "name": "nfvm",
+  "version": "0.0.1",
+  "description": "Node File Version Manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notmedia/nfvm.git"
+  },
+  "keywords": [
+    "file",
+    "version",
+    "manager"
+  ],
+  "author": "Alexey Vasyukov (@notmedia)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/notmedia/nfvm/issues"
+  },
+  "homepage": "https://github.com/notmedia/nfvm#readme",
+  "dependencies": {
+    "commander": "^2.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}
