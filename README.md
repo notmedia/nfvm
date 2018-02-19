@@ -8,11 +8,11 @@
   I think this is bad solution because with this stucture user can't use sets of files.
   ```json
     {
-      filename: "String",
-      path: "String",
-      versions: [{
-        name: "String",
-        path: "String"
+      "filename": "String",
+      "path": "String",
+      "versions": [{
+        "name": "String",
+        "path": "String"
       }]
     }
   ```
@@ -25,15 +25,15 @@
 
   ```json
     {
-      fileSets: [{
-        setName: "String",
-        files: [{
-          filename: "String",
-          path: "String",
-          defaultVersion: "String",
-          versions: [{
-            name: "String",
-            path: "String"
+      "fileSets": [{
+        "setName": "String",
+        "files": [{
+          "filename": "String",
+          "path": "String",
+          "defaultVersion": "String",
+          "versions": [{
+            "name": "String",
+            "path": "String"
           }]
         }]
       }]

@@ -1,2 +1,10 @@
 #!/usr/bin/env node
+
 'use strict';
+
+const commander = require('commander');
+
+const pkg = require('../package.json');
+
+commander.version(pkg.version)
+  .parse(process.argv);
