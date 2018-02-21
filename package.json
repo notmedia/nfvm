@@ -1,14 +1,14 @@
 {
-  "name": "nfvm",
+  "name": "fvc",
   "version": "0.0.1",
-  "description": "Node File Version Manager",
+  "description": "File version control tool",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/notmedia/nfvm.git"
+    "url": "git+https://github.com/notmedia/fvc.git"
   },
   "keywords": [
     "file",
@@ -18,9 +18,9 @@
   "author": "Alexey Vasyukov (@notmedia)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/notmedia/nfvm/issues"
+    "url": "https://github.com/notmedia/fvc/issues"
   },
-  "homepage": "https://github.com/notmedia/nfvm#readme",
+  "homepage": "https://github.com/notmedia/fvc#readme",
   "dependencies": {
     "chalk": "^2.3.1",
     "commander": "^2.14.1"

@@ -13,8 +13,6 @@ commander.command('set <pack_name>')
   .option('-v, --pack-version <version>')
   .action((packName, options) => {
     const pack = options.packVersion || 'default';
-    console.log('packName: ', packName);
-    console.log('pack: ', pack);
   });
 
 commander.parse(process.argv);

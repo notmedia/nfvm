@@ -1,4 +1,4 @@
-# Node File Version Manager
+# File version control tool
 
 Changes reminder:
 * Renamed termin "set of files" to "pack"
