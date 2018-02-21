@@ -6,5 +6,15 @@ const commander = require('commander');
 
 const pkg = require('../package.json');
 
-commander.version(pkg.version)
-  .parse(process.argv);
+commander.version(pkg.version);
+
+commander.command('set <pack_name>')
+  .description('sets the given version of pack')
+  .option('-v, --pack-version <version>')
+  .action((packName, options) => {
+    const pack = options.packVersion || 'default';
+    console.log('packName: ', packName);
+    console.log('pack: ', pack);
+  });
+
+commander.parse(process.argv);

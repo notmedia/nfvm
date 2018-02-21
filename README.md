@@ -1,5 +1,8 @@
 # Node File Version Manager
 
+Changes reminder:
+* Renamed termin "set of files" to "pack"
+
 #### TODO:
 - **Plan config file structure**
   
