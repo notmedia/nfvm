@@ -1,4 +1,4 @@
-# File version control tool
+# :traffic_light: Node File Version Manager
 
 Changes reminder:
 * Renamed termin "set of files" to "pack"
@@ -52,7 +52,7 @@ Changes reminder:
   - select version
 - **Config file support**
 - **API for use from code**
-  When app works in global mode when user change pack version fvc simply changes files in destination folders.
+  When app works in global mode when user change pack version nfvm simply changes files in destination folders.
   When app works in API mode, I think this is a good idea for return stream/buffer of requested version of file, without changing in destination folder.
   Think about this differences, is it normal?
 - **Create readme**
