@@ -1,59 +1,39 @@
 # :traffic_light: Node File Version Manager
 
-Changes reminder:
-* Renamed termin "set of files" to "pack"
-
 #### TODO:
 - **Plan config file structure**
   
-  Version 1:
-   
-  I think this is bad solution because with this stucture user can't use sets of files.
   ```json
-    {
-      "filename": "String",
-      "path": "String",
-      "versions": [{
-        "name": "String",
-        "path": "String"
-      }]
-    }
-  ```
-
-  Version 2:
-
-  Idea - Use versioning for set of files and for files also.
-  So, for files we have default version for apply when version
-  of set changed.
-
-  ```json
-    {
-      "fileSets": [{
-        "setName": "String",
-        "files": [{
-          "filename": "String",
-          "path": "String",
-          "defaultVersion": "String",
-          "versions": [{
-            "name": "String",
-            "path": "String"
-          }]
+  {
+    "packs": [{
+      "name": "String",
+      "defaultVersion": "String",
+      "files": [{
+        "filename": "String",
+        "destinationPath": "String",
+        "versions": [{
+          "name": "String",
+          "sourcePath": "String",
         }]
       }]
-    }
+    }]
+  }
   ```
 
-- **Add commands**
-  - init config
-  - add file
-  - remove file
-  - add version
-  - remove version
-  - select version
+- **Commands**
+  - Config
+    - init
+  - Pack
+    - new
+    - remove
+    - set
+  - File
+    - add
+    - remove
 - **Config file support**
 - **API for use from code**
-  When app starts from cmd when user change pack version nfvm simply changes files in destination folders.
-  When app works in API mode (switching between file controlls antoher code), I think this is a good idea for return stream/buffer of requested version of file, without changing file in destination folder.
+  When app starts from cmd the nfvm changes files in destination folders.
+  When app works in API mode (when using nfvm from code), I think this is a good idea for return stream/buffer of requested version of file, without changing file in destination folder.
   Think about this differences, is it normal?
 - **Create readme**
   - Instalation guide
