@@ -52,8 +52,8 @@ Changes reminder:
   - select version
 - **Config file support**
 - **API for use from code**
-  When app works in global mode when user change pack version nfvm simply changes files in destination folders.
-  When app works in API mode, I think this is a good idea for return stream/buffer of requested version of file, without changing in destination folder.
+  When app starts from cmd when user change pack version nfvm simply changes files in destination folders.
+  When app works in API mode (switching between file controlls antoher code), I think this is a good idea for return stream/buffer of requested version of file, without changing file in destination folder.
   Think about this differences, is it normal?
 - **Create readme**
   - Instalation guide

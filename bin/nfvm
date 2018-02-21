@@ -5,8 +5,11 @@
 const commander = require('commander');
 
 const pkg = require('../package.json');
+const Manager = require('../lib/Manager');
 
 const DEFAULT_VERSION_NAME = 'default';
+
+const manager = new Manager();
 
 commander.version(pkg.version);
 
@@ -15,13 +18,15 @@ commander.command('new <pack_name>')
   .option('-v, --pack-version <version>')
   .action((packName, options) => {
     const version = options.packVersion;
+    manager.create(packName, version);
   });
 
 commander.command('remove <pack_name>')
-  .description('removes pack or version of pack')
+  .description('removes pack or pack version')
   .option('-v, --pack-version <version>')
   .action((packName, options) => {
     const version = options.packVersion;
+    manager.remove(packName, version);
   });
 
 commander.command('set <pack_name>')
@@ -29,6 +34,7 @@ commander.command('set <pack_name>')
   .option('-v, --pack-version <version>')
   .action((packName, options) => {
     const version = options.packVersion || DEFAULT_VERSION_NAME;
+    manager.set(packName, version);
   });
 
 commander.parse(process.argv);
