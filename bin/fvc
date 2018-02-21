@@ -6,13 +6,29 @@ const commander = require('commander');
 
 const pkg = require('../package.json');
 
+const DEFAULT_VERSION_NAME = 'default';
+
 commander.version(pkg.version);
+
+commander.command('new <pack_name>')
+  .description('creates new pack of files or new version of pack')
+  .option('-v, --pack-version <version>')
+  .action((packName, options) => {
+    const version = options.packVersion;
+  });
+
+commander.command('remove <pack_name>')
+  .description('removes pack or version of pack')
+  .option('-v, --pack-version <version>')
+  .action((packName, options) => {
+    const version = options.packVersion;
+  });
 
 commander.command('set <pack_name>')
   .description('sets the given version of pack')
   .option('-v, --pack-version <version>')
   .action((packName, options) => {
-    const pack = options.packVersion || 'default';
+    const version = options.packVersion || DEFAULT_VERSION_NAME;
   });
 
 commander.parse(process.argv);
