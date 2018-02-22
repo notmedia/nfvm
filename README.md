@@ -19,6 +19,7 @@ While planning how would it work, I thought that sometimes (I didn't have this c
     "packs": [{
       "name": "String",
       "defaultVersion": "String",
+      "removeFileIfVersionNotExists": "Boolean",
       "files": [{
         "filename": "String",
         "destinationPath": "String",
@@ -32,21 +33,36 @@ While planning how would it work, I thought that sometimes (I didn't have this c
   ```
 
 #### TODO
-- **Commands**
-  - Config
-    - init
+- **CLI Commands**
+  - `init` - creates local .nfvm config file
+  - `list` - list all packs
   - Pack
-    - new
-    - remove
-    - set
+    - `new` - creates new pack or pack version
+      - `-v <version>` - if specified creates new version
+      - `-f <path>` - if specified init pack from folder
+        
+        Pack folder structure
+        ```
+          -pack
+            --version1
+              -file1
+              -file2
+            --version2
+              -file2
+        ```
+    - `remove` - remove pack or pack version
+    - `set` - set pack version
+    - `list` - list of all files
+    - `v` - current pack version
   - File
-    - add
-    - remove
+    - `add` - add new version of file
+    - `remove` - remove file version
 - **Config file support**
-- **API for use from code**
+- **API**
   When app starts from cmd the nfvm changes files in destination folders.
   When app works in API mode (when using nfvm from code), I think this is a good idea for return stream/buffer of requested version of file, without changing file in destination folder.
-  Think about this differences, is it normal?
+  Think about this differences, is it normal? Or add additional options to get stream/buffer.
+- **Support .nfvm config file**
 - **Create readme**
   - Instalation guide
   - User guide
