@@ -1,11 +1,12 @@
 module.exports = {
-  root: true,
-  extends: 'airbnb-base',
-  env: {
-    node: true,
-    es6: true,
+  'root': true,
+  'extends': 'airbnb-base',
+  'env': {
+    'node': true,
+    'es6': true,
   },
-  rules: {
-    strict: 0,
+  'rules': {
+    'strict': 0,
+    'no-console': 0,
   },
 };

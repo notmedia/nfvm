@@ -1,5 +1,6 @@
 # :traffic_light: Node File Version Manager
 
+This tool is being developed, so wait some time please :)
 ### Concept
 
 While writing code I often run into problem of fast switching between versions of local files which are ignored by git. This files for security reason can't be in repository or they are individual for each server.
@@ -22,25 +23,24 @@ While planning how would it work, I thought that sometimes (I didn't have this c
       "removeFileIfVersionNotExists": "Boolean",
       "files": [{
         "filename": "String",
-        "destinationPath": "String",
+        "destinationPath": "String", // full path
         "versions": [{
           "name": "String",
-          "sourcePath": "String",
+          "sourcePath": "String", // full path
         }]
       }]
     }]
   }
   ```
-
-### TODO
-- **CLI Commands**
+- **CLI commands**
   - `init` - creates local .nfvmrc.json config file
-  - `list` - list all packs
-  - Pack
-    - `new` - creates new pack or pack version
-      - `-v <version>` - if specified creates new version
-      - `-f <path>` - if specified init pack from folder
-        
+    - `-g, --global <file>` - link nfvm to global file config
+  - `list` - packs list with applied versions
+    - `-g, --global` - list of global packs
+  - `pack <name>`
+    - `create` - creates new pack
+      - `-v, --version <version>` - if specified creates new version of pack
+      - `-f, --folder <path>` - if specified init pack from folder  
         Pack folder structure
         ```
           -pack
@@ -50,15 +50,22 @@ While planning how would it work, I thought that sometimes (I didn't have this c
           --version2
           ---file2
         ```
-    - `remove` - remove pack or pack version
-      - `-v <version>` - if specified removes pack version
+    - `remove` - remove pack
+      - `-v, --version <version>` - if specified removes pack version
     - `set <version>` - set pack version
-    - `list` - list of all files
-    - `v` - current pack version
-  - File
-    - `add` - add new version of file
-    - `remove` - remove file version
+    - `list` - files list from pack
+    - `file <file>`
+      - `add` - add file to pack
+        - `-v, --version <version>` - if specified adds version of file
+      - `remove` - remove file
+        - `-v, --version <version>` - if specified removes only version of file
+
+    Pack options:
+    - `-v, --version` - current pack version
+    - `-g, --global` - use global config
+### TODO
 - **Config file support**
+- **Init default config**
 - **API**
   When app starts from cmd the nfvm changes files in destination folders.
   When app works in API mode (when using nfvm from code), I think this is a good idea for return stream/buffer of requested version of file, without changing file in destination folder.
