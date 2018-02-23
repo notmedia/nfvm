@@ -34,7 +34,6 @@ While planning how would it work, I thought that sometimes (I didn't have this c
   ```
 - **CLI commands**
   - `init` - creates local .nfvmrc.json config file
-    - `-g, --global <file>` - link nfvm to global file config
   - `list` - packs list with applied versions
     - `-g, --global` - list of global packs
   - `pack <name>`
@@ -66,6 +65,7 @@ While planning how would it work, I thought that sometimes (I didn't have this c
 ### TODO
 - **Config file support**
 - **Init default config**
+- **Display packs/files lists using cli-table-redemption**
 - **API**
   When app starts from cmd the nfvm changes files in destination folders.
   When app works in API mode (when using nfvm from code), I think this is a good idea for return stream/buffer of requested version of file, without changing file in destination folder.
