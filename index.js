@@ -1,3 +1,4 @@
-module.exports = {
-  Manager: require('./lib/Manager'),
-};
+const Manager = require('./lib/Manager');
+
+module.exports = new Manager();
+

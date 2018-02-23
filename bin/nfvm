@@ -9,7 +9,7 @@ const Manager = require('../lib/Manager');
 
 const DEFAULT_VERSION_NAME = 'default';
 
-const manager = new Manager();
+const manager = new Manager(true);
 
 commander.version(pkg.version);
 
