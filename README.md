@@ -19,7 +19,7 @@ While planning how would it work, I thought that sometimes (I didn't have this c
   - `create <pack>`
     - `-f, --file` - creates file for pack
     - `-v, --version <version>` - creates version of pack or file
-    - `--folder <path>` - if specified creates pack from folder
+    - `--folder <path>` - if specified creates pack from folder  
         Pack folder structure
         ```
           -pack
