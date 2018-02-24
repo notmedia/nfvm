@@ -62,12 +62,12 @@ While planning how would it work, I thought that sometimes (I didn't have this c
   ```
 
 ### TODO
-- **Display packs/files lists using cli-table-redemption**
 - **API**
   When app starts from cmd the nfvm changes files in destination folders.
   When app works in API mode (when using nfvm from code), I think this is a good idea for return stream/buffer of requested version of file, without changing file in destination folder.
   Think about this differences, is it normal? Or add additional options to get stream/buffer.
-- **Support .nfvmrc.json config file**
+- **Update logo**
+- **Add completion to cli commands**
 - **Create readme**
   - Instalation guide
   - User guide
