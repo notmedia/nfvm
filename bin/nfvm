@@ -18,12 +18,17 @@ caporal.command('init')
   });
 
 caporal.command('create')
-  .option('-p, --pack')
+  .argument('<pack>')
   .option('-f, --file')
+  .option('-v, --version <version>')
   .option('--folder <path>')
   .option('-g, --global')
   .action((args, options) => {
-
+    if (options.pack) {
+      manager.createPack(args.pack, options.version, options.folder, options.global);
+    } else if (options.file) {
+      manager.createFile(args.pack, options.version, options.global);
+    }
   });
 
 caporal.command('remove')
