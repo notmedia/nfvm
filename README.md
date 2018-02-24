@@ -1,6 +1,11 @@
 # :traffic_light: Node File Version Manager
 
+<p align="center">
+  <img height="256" src="logo.png?raw=true">
+</p>
+
 This tool is being developed, so wait some time please :)
+
 ### Concept
 
 While writing code I often run into problem of fast switching between versions of local files which are ignored by git. This files for security reason can't be in repository or they are individual for each server.
