@@ -13,34 +13,13 @@ The **nfvm** tool - is the first try to solve the problem of my daily pain.
 
 While planning how would it work, I thought that sometimes (I didn't have this case in real life, but probably it can be) we need to control version of local files from our code, therefore it is a good idea to write an API. 
 
-### In work
 
-- **Plan config file structure**
-
-  Last version:
-  ```json
-  {
-    "packs": [{
-      "name": "String",
-      "defaultVersion": "String",
-      "removeFileIfVersionNotExists": "Boolean",
-      "files": [{
-        "filename": "String",
-        "destinationPath": "String",
-        "versions": [{
-          "name": "String",
-          "sourcePath": "String",
-        }]
-      }]
-    }]
-  }
-  ```
 - **CLI commands**
   - `init` - creates local .nfvmrc.json config file
   - `create`
     - `-p, --pack` - creates pack
     - `-f, --file` - creates file for pack
-    - `--folder` - if specified creates pack from folder
+    - `--folder <path>` - if specified creates pack from folder
         Pack folder structure
         ```
           -pack
@@ -60,6 +39,27 @@ While planning how would it work, I thought that sometimes (I didn't have this c
   - `list`
     - `-p, --pack <pack>` - files list in pack
     - `-g, --global` - list from global
+
+- **.nfvmrc.json structure:**
+
+  ```json
+  {
+    "packs": [{
+      "name": "String",
+      "defaultVersion": "String",
+      "removeFileIfVersionNotExists": "Boolean",
+      "files": [{
+        "filename": "String",
+        "destinationPath": "String",
+        "versions": [{
+          "name": "String",
+          "sourcePath": "String",
+        }]
+      }]
+    }]
+  }
+  ```
+
 ### TODO
 - **Config file support**
 - **Init default config**
