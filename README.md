@@ -47,6 +47,7 @@ While planning how would it work, I thought that sometimes (I didn't have this c
     "packs": [{
       "name": "String",
       "defaultVersion": "String",
+      "currentVersion": "String",
       "removeFileIfVersionNotExists": "Boolean",
       "files": [{
         "filename": "String",
