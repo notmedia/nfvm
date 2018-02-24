@@ -61,8 +61,6 @@ While planning how would it work, I thought that sometimes (I didn't have this c
   ```
 
 ### TODO
-- **Config file support**
-- **Init default config**
 - **Display packs/files lists using cli-table-redemption**
 - **API**
   When app starts from cmd the nfvm changes files in destination folders.

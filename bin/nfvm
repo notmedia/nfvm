@@ -47,7 +47,7 @@ caporal.command('list')
   .option('-p, --pack <pack>')
   .option('-g, --global')
   .action((args, options) => {
-
+    manager.list(options.pack, options.global);
   });
 
 caporal.parse(process.argv);
