@@ -2,43 +2,52 @@
 
 'use strict';
 
-const commander = require('commander');
+const caporal = require('caporal');
 
 const pkg = require('../package.json');
 const Manager = require('../lib/Manager');
 
 const manager = new Manager(true);
 
-commander.version(pkg.version);
+caporal.version(pkg.version);
 
-commander.command('init')
+caporal.command('init')
   .description('creates .nfvmrc.json config file')
   .action(() => {
     manager.initialize();
   });
 
-commander.command('new <pack_name>').option('-g, --global', 'set nfvm global file config')
-  .description('creates new pack of files or new version of pack')
-  .option('-v, --pack-version <version>')
-  .action((packName, options) => {
-    const version = options.packVersion;
-    manager.create(packName, version);
+caporal.command('create')
+  .option('-p, --pack')
+  .option('-f, --file')
+  .option('--folder <path>')
+  .option('-g, --global')
+  .action((args, options) => {
+
   });
 
-commander.command('remove <pack_name>')
-  .description('removes pack or pack version')
-  .option('-v, --pack-version <version>')
-  .action((packName, options) => {
-    const version = options.packVersion;
-    manager.remove(packName, version);
+caporal.command('remove')
+  .argument('<pack>')
+  .option('-f, --file <name>')
+  .option('-v, --version <version>')
+  .option('-g, --global')
+  .action((args, options) => {
+
   });
 
-commander.command('set <pack_name>')
-  .description('sets the given version of pack')
-  .option('-v, --pack-version <version>')
-  .action((packName, options) => {
-    const version = options.packVersion;
-    manager.set(packName, version);
+caporal.command('set')
+  .argument('<pack>')
+  .argument('<version>')
+  .option('-g, --global')
+  .action((args, options) => {
+
   });
 
-commander.parse(process.argv);
+caporal.command('list')
+  .option('-p, --pack <pack>')
+  .option('-g, --global')
+  .action((args, options) => {
+
+  });
+
+caporal.parse(process.argv);

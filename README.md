@@ -1,5 +1,3 @@
-# :traffic_light: Node File Version Manager
-
 <p align="center">
   <img height="256" src="logo.png?raw=true">
 </p>
@@ -28,10 +26,10 @@ While planning how would it work, I thought that sometimes (I didn't have this c
       "removeFileIfVersionNotExists": "Boolean",
       "files": [{
         "filename": "String",
-        "destinationPath": "String", // full path
+        "destinationPath": "String",
         "versions": [{
           "name": "String",
-          "sourcePath": "String", // full path
+          "sourcePath": "String",
         }]
       }]
     }]
@@ -39,12 +37,10 @@ While planning how would it work, I thought that sometimes (I didn't have this c
   ```
 - **CLI commands**
   - `init` - creates local .nfvmrc.json config file
-  - `list` - packs list with applied versions
-    - `-g, --global` - list of global packs
-  - `pack <name>`
-    - `create` - creates new pack
-      - `-v, --version <version>` - if specified creates new version of pack
-      - `-f, --folder <path>` - if specified init pack from folder  
+  - `create`
+    - `-p, --pack` - creates pack
+    - `-f, --file` - creates file for pack
+    - `--folder` - if specified creates pack from folder
         Pack folder structure
         ```
           -pack
@@ -53,20 +49,17 @@ While planning how would it work, I thought that sometimes (I didn't have this c
           ---file2
           --version2
           ---file2
-        ```
-    - `remove` - remove pack
-      - `-v, --version <version>` - if specified removes pack version
-    - `set <version>` - set pack version
-    - `list` - files list from pack
-    - `file <file>`
-      - `add` - add file to pack
-        - `-v, --version <version>` - if specified adds version of file
-      - `remove` - remove file
-        - `-v, --version <version>` - if specified removes only version of file
-
-    Pack options:
-    - `-v, --version` - current pack version
-    - `-g, --global` - use global config
+        ```    
+    - `-g, --global` - create in global
+  - `remove <pack>` - removes pack
+    - `-f, --file <name>` - remove file from pack
+    - `-v, --version <version>` - removes version of pack or file
+    - `-g, --global` - removes from global
+  - `set <pack> <version>`
+    - `-g, --global` - sets in global
+  - `list`
+    - `-p, --pack <pack>` - files list in pack
+    - `-g, --global` - list from global
 ### TODO
 - **Config file support**
 - **Init default config**
