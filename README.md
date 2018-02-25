@@ -1,6 +1,7 @@
-<p align="center">
-  <img height="256" src="logo.png?raw=true">
-</p>
+<div style="text-align:center;>
+
+  ![](/logo.png)
+</div>
 
 This tool is being developed, so wait some time please :)
 
@@ -66,7 +67,6 @@ While planning how would it work, I thought that sometimes (I didn't have this c
   When app starts from cmd the nfvm changes files in destination folders.
   When app works in API mode (when using nfvm from code), I think this is a good idea for return stream/buffer of requested version of file, without changing file in destination folder.
   Think about this differences, is it normal? Or add additional options to get stream/buffer.
-- **Update logo**
 - **Add completion to cli commands**
 - **Create readme**
   - Instalation guide
