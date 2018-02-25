@@ -5,7 +5,7 @@
 const caporal = require('caporal');
 
 const pkg = require('../package.json');
-const Manager = require('../lib/Manager');
+const { Manager } = require('../lib/API');
 
 const manager = new Manager(true);
 
