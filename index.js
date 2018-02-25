@@ -1,4 +1,3 @@
-const Manager = require('./lib/Manager');
+const { Manager } = require('./lib/API');
 
 module.exports = new Manager();
-
