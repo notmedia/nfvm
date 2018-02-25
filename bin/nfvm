@@ -24,10 +24,10 @@ caporal.command('create')
   .option('--folder <path>')
   .option('-g, --global')
   .action((args, options) => {
-    if (options.pack) {
-      manager.createPack(args.pack, options.version, options.folder, options.global);
-    } else if (options.file) {
+    if (options.file) {
       manager.createFile(args.pack, options.version, options.global);
+    } else {
+      manager.createPack(args.pack, options.version, options.folder, options.global);
     }
   });
 
