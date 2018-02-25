@@ -13,8 +13,7 @@ The **nfvm** tool - is the first try to solve the problem of my daily pain.
 
 While planning how would it work, I thought that sometimes (I didn't have this case in real life, but probably it can be) we need to control version of local files from our code, therefore it is a good idea to write an API. 
 
-
-- **CLI commands**
+### CLI commands
   - `init` - creates local .nfvmrc.json config file
   - `create <pack>`
     - `-f, --file` - creates file for pack
@@ -40,7 +39,7 @@ While planning how would it work, I thought that sometimes (I didn't have this c
     - `-p, --pack <pack>` - files list in pack
     - `-g, --global` - list from global
 
-- **.nfvmrc.json structure:**
+### .nfvmrc.json structure:
 
   ```json
   {
