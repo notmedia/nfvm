@@ -13,6 +13,10 @@ The **nfvm** tool - is the first try to solve the problem of my daily pain.
 
 While planning how would it work, I thought that sometimes (I didn't have this case in real life, but probably it can be) we need to control version of local files from our code, therefore it is a good idea to write an API. 
 
+### Installing nfvm
+```bash
+$ npm install nfvm -g
+```
 ### CLI commands
   - `init` - creates local .nfvmrc.json config file
   - `create <pack>`
@@ -65,9 +69,9 @@ While planning how would it work, I thought that sometimes (I didn't have this c
   When app starts from cmd the nfvm changes files in destination folders.
   When app works in API mode (when using nfvm from code), I think this is a good idea for return stream/buffer of requested version of file, without changing file in destination folder.
   Think about this differences, is it normal? Or add additional options to get stream/buffer.
+- **SHA version comparing on change?**
 - **Add completion to cli commands**
 - **Create readme**
-  - Instalation guide
   - User guide
   - API documentation
   
