@@ -1,6 +1,5 @@
-<div style="text-align:center;>
-
-  ![](/logo.png)
+<div style="text-align:center;">
+  <img src="logo.png">
 </div>
 
 This tool is being developed, so wait some time please :)
