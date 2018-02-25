@@ -3,18 +3,21 @@
 'use strict';
 
 const caporal = require('caporal');
+const chalk = require('chalk');
 
 const pkg = require('../package.json');
 const { Manager } = require('../lib/API');
-
-const manager = new Manager(true);
 
 caporal.version(pkg.version);
 
 caporal.command('init')
   .description('creates .nfvmrc.json config file')
   .action(() => {
-    manager.initialize();
+    try {
+      Manager.initialize();
+    } catch (err) {
+      console.log(chalk.red(err));
+    }
   });
 
 caporal.command('create')
@@ -24,10 +27,16 @@ caporal.command('create')
   .option('--folder <path>')
   .option('-g, --global')
   .action((args, options) => {
-    if (options.file) {
-      manager.createFile(args.pack, options.version, options.global);
-    } else {
-      manager.createPack(args.pack, options.version, options.folder, options.global);
+    try {
+      const manager = new Manager(true, options.global);
+
+      if (options.file) {
+        manager.createFile(args.pack, options.version);
+      } else {
+        manager.createPack(args.pack, options.version, options.folder);
+      }
+    } catch (err) {
+      console.log(chalk.red(err));
     }
   });
 
@@ -52,7 +61,13 @@ caporal.command('list')
   .option('-p, --pack <pack>')
   .option('-g, --global')
   .action((args, options) => {
-    manager.list(options.pack, options.global);
+    try {
+      const manager = new Manager(true, options.global);
+
+      manager.list(options.pack);
+    } catch (err) {
+      console.log(chalk.red(err));
+    }
   });
 
 caporal.parse(process.argv);
