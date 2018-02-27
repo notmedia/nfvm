@@ -74,4 +74,3 @@ $ npm install nfvm -g
 - **Create readme**
   - User guide
   - API documentation
-  
