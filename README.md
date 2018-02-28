@@ -65,6 +65,7 @@ $ npm install nfvm -g
   ```
 
 ### TODO
+- **Ability to use id's for packs and files**
 - **API**
   When app starts from cmd the nfvm changes files in destination folders.
   When app works in API mode (when using nfvm from code), I think this is a good idea for return stream/buffer of requested version of file, without changing file in destination folder.
