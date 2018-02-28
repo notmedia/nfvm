@@ -51,6 +51,7 @@ $ npm install nfvm -g
       "name": "String",
       "defaultVersion": "String",
       "currentVersion": "String",
+      "versions": "String[]",
       "removeFileIfVersionNotExists": "Boolean",
       "files": [{
         "filename": "String",
