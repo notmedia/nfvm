@@ -2,7 +2,7 @@
   <img src="img/logo.png">
 </div>
 
-This tool is being developed, so wait some time please :)
+:warning:	This tool is being developed. Release 0.1 planned on the start of next week.
 
 ### Concept
 
@@ -32,7 +32,7 @@ $ npm install nfvm -g
           --version2
           ---file2
         ```    
-    - `-g, --global` - create in global
+    - :white_check_mark: `-g, --global` - create in global
   - `remove <pack>` - removes pack
     - `-f, --file <name>` - remove file from pack
     - `-v, --version <version>` - removes version of pack or file
@@ -40,8 +40,8 @@ $ npm install nfvm -g
   - `set <pack> <version>`
     - `-g, --global` - sets in global
   - :white_check_mark: `list`
-    - `-p, --pack <pack>` - files list in pack
-    - `-g, --global` - list from global
+    - :white_check_mark: `-p, --pack <pack>` - files list in pack
+    - :white_check_mark: `-g, --global` - list from global
 
 ### .nfvmrc.json structure:
 
