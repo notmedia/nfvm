@@ -33,10 +33,10 @@ $ npm install nfvm -g
           ---file2
         ```    
     - :white_check_mark: `-g, --global` - create in global
-  - `remove <packname>` - remove pack
-    - `-f, --file` - remove file
-    - `-v <version>` - remove version of pack or file
-    - `-g, --global` - remove from global
+  - :white_check_mark: `remove <packname>` - remove pack
+    - :white_check_mark: `-f, --file` - remove file
+    - :white_check_mark: `-v <version>` - remove version of pack or file
+    - :white_check_mark: `-g, --global` - remove from global
   - `set <packname> <version>`
     - `-g, --global` - sets in global
   - :white_check_mark: `list`
@@ -67,12 +67,15 @@ $ npm install nfvm -g
 
 ### TODO
 - **Ability to use id's for packs and files**
+- **If remove pack version, then set default version automaticly**
+- **Option to remove files from folder when removing pack/pack version, file/file version**
 - **API**
   When app starts from cmd the nfvm changes files in destination folders.
   When app works in API mode (when using nfvm from code), I think this is a good idea for return stream/buffer of requested version of file, without changing file in destination folder.
   Think about this differences, is it normal? Or add additional options to get stream/buffer.
 - **SHA version comparing on change?**
 - **Add completion to cli commands**
+- **Write tests**
 - **Create readme**
   - User guide
   - API documentation
