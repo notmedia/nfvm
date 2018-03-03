@@ -63,11 +63,11 @@ caporal.command('set')
   .argument('<packname>')
   .argument('<version>')
   .option('-g, --global')
-  .action((args, options) => {
+  .action(async (args, options) => {
     try {
       const manager = new Manager(true, options.global);
 
-      manager.set(args.packname, args.version);
+      await manager.set(args.packname, args.version);
     } catch (err) {
       console.log(chalk.red(err));
     }

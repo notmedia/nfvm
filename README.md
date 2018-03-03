@@ -2,8 +2,6 @@
   <img src="img/logo.png">
 </div>
 
-:warning:	This tool is being developed. Release 0.1 planned on the start of next week.
-
 ### Concept
 
 While writing code I often run into problem of fast switching between versions of local files which are ignored by git. This files for security reason can't be in repository or they are individual for each server.
@@ -37,8 +35,8 @@ $ npm install nfvm -g
     - :white_check_mark: `-f, --file <file>` - remove file
     - :white_check_mark: `-v <version>` - remove version of pack or file
     - :white_check_mark: `-g, --global` - remove from global
-  - `set <packname> <version>`
-    - `-g, --global` - sets in global
+  - :white_check_mark: `set <packname> <version>`
+    - :white_check_mark: `-g, --global` - sets in global
   - :white_check_mark: `list`
     - :white_check_mark: `-p, --pack <pack>` - files list in pack
     - :white_check_mark: `-g, --global` - list from global
