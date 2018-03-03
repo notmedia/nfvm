@@ -18,7 +18,7 @@ $ npm install nfvm -g
 ### CLI commands
   - :white_check_mark: `init` - create local .nfvmrc.json config file
   - :white_check_mark: `create <packname>`
-    - :white_check_mark: `-f, --file <file>` - create file
+    - :white_check_mark: `-f, --file <filename>` - create file
     - :white_check_mark: `-v <version>` - create version of pack or file
     - `--folder <path>` - create from folder  
         Pack folder structure
@@ -32,13 +32,13 @@ $ npm install nfvm -g
         ```    
     - :white_check_mark: `-g, --global` - create in global
   - :white_check_mark: `remove <packname>` - remove pack
-    - :white_check_mark: `-f, --file <file>` - remove file
+    - :white_check_mark: `-f, --file <filename>` - remove file
     - :white_check_mark: `-v <version>` - remove version of pack or file
     - :white_check_mark: `-g, --global` - remove from global
   - :white_check_mark: `set <packname> <version>`
     - :white_check_mark: `-g, --global` - sets in global
   - :white_check_mark: `list`
-    - :white_check_mark: `-p, --pack <pack>` - files list in pack
+    - :white_check_mark: `-p, --pack <packname>` - files list in pack
     - :white_check_mark: `-g, --global` - list from global
 
 ### .nfvmrc.json structure:

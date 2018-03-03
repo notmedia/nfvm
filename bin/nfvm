@@ -22,9 +22,9 @@ caporal.command('init')
 
 caporal.command('create')
   .argument('<packname>')
-  .option('-f, --file <file>', 'create file') // TODO: validate file?
+  .option('-f, --file <filename>', 'create file')
   .option('-v <version>', 'version of pack or file')
-  .option('--folder <path>', 'create from folder')
+  // .option('--folder <path>', 'create from folder')
   .option('-g, --global')
   .action(async (args, options) => {
     try {
@@ -42,7 +42,7 @@ caporal.command('create')
 
 caporal.command('remove')
   .argument('<packname>')
-  .option('-f, --file <file>', 'remove file')
+  .option('-f, --file <filename>', 'remove file')
   .option('-v <version>', 'version of pack or file')
   .option('-g, --global')
   .action((args, options) => {
@@ -80,7 +80,7 @@ caporal.command('list')
     try {
       const manager = new Manager(true, options.global);
 
-      manager.list(options.packname);
+      manager.list(options.pack);
     } catch (err) {
       console.log(chalk.red(err));
     }
