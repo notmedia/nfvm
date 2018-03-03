@@ -11,7 +11,7 @@ const { Manager } = require('../lib/API');
 caporal.version(pkg.version);
 
 caporal.command('init')
-  .description('creates .nfvmrc.json config file')
+  .description('create local .nfvmrc.json config file')
   .action(() => {
     try {
       Manager.initialize();
@@ -21,19 +21,22 @@ caporal.command('init')
   });
 
 caporal.command('create')
-  .argument('<pack>')
-  .option('-f, --file')
-  .option('-v, --version <version>')
-  .option('--folder <path>')
+  .argument('<name>')
+  .option('-p, --pack', 'create pack')
+  .option('-f, --file', 'create file')
+  .option('-v <version>', 'version of pack or file')
+  .option('--folder <path>', 'create from folder')
   .option('-g, --global')
   .action((args, options) => {
     try {
       const manager = new Manager(true, options.global);
 
-      if (options.file) {
-        manager.createFile(args.pack, options.version);
+      if (options.pack) {
+        manager.createPack(args.name, options.version, options.folder);
+      } else if (options.file) {
+        manager.createFile(args.name, options.version);
       } else {
-        manager.createPack(args.pack, options.version, options.folder);
+        throw new Error('Options -p or -f must be specified');
       }
     } catch (err) {
       console.log(chalk.red(err));
@@ -41,12 +44,25 @@ caporal.command('create')
   });
 
 caporal.command('remove')
-  .argument('<pack>')
-  .option('-f, --file <name>')
-  .option('-v, --version <version>')
+  .argument('<name>')
+  .option('-p, --pack', 'remove pack')
+  .option('-f, --file', 'remove file')
+  .option('-v <version>', 'version of pack or file')
   .option('-g, --global')
   .action((args, options) => {
+    try {
+      const manager = new Manager(true, options.global);
 
+      if (options.pack) {
+        manager.removePack(args.name, options.version, options.folder);
+      } else if (options.file) {
+        manager.removeFile(args.name, options.version);
+      } else {
+        throw new Error('Options -p or -f must be specified');
+      }
+    } catch (err) {
+      console.log(chalk.red(err));
+    }
   });
 
 caporal.command('set')
