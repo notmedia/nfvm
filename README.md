@@ -37,7 +37,7 @@ $ npm install nfvm -g
     - `-f, --file` - remove file
     - `-v <version>` - remove version of pack or file
     - `-g, --global` - remove from global
-  - `set <pack> <version>`
+  - `set <packname> <version>`
     - `-g, --global` - sets in global
   - :white_check_mark: `list`
     - :white_check_mark: `-p, --pack <pack>` - files list in pack
