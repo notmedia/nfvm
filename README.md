@@ -1,5 +1,10 @@
 <div align="center">
   <img src="img/logo.png">
+
+  <a href="https://www.npmjs.com/package/nfvm"><img src="https://img.shields.io/npm/v/nfvm.svg?style=flat-square" alt="NPM version"></a>
+  <a href="https://www.npmjs.com/package/nfvm"><img src="https://img.shields.io/npm/dt/nfvm.svg?style=flat-square"></a>
+
+  <a href="https://codeclimate.com/github/notmedia/nfvm/maintainability"><img src="https://api.codeclimate.com/v1/badges/8ed0d6fd5d211a44511b/maintainability" /></a>
 </div>
 
 ### Concept
