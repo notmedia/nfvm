@@ -18,11 +18,12 @@ While planning how would it work, I thought that sometimes (I didn't have this c
 $ npm install nfvm -g
 ```
 ### CLI commands
-  - :white_check_mark: `init` - creates local .nfvmrc.json config file
-  - :white_check_mark: `create <pack>`
-    - :white_check_mark: `-f, --file` - creates file for pack
-    - :white_check_mark: `-v, --version <version>` - creates version of pack or file
-    - `--folder <path>` - if specified creates pack from folder  
+  - :white_check_mark: `init` - create local .nfvmrc.json config file
+  - :white_check_mark: `create <name>`
+    - :white_check_mark: `-p, --pack` - create pack
+    - :white_check_mark: `-f, --file` - create file
+    - :white_check_mark: `-v <version>` - create version of pack or file
+    - `--folder <path>` - create from folder  
         Pack folder structure
         ```
           -pack
@@ -33,10 +34,11 @@ $ npm install nfvm -g
           ---file2
         ```    
     - :white_check_mark: `-g, --global` - create in global
-  - `remove <pack>` - removes pack
-    - `-f, --file <name>` - remove file from pack
-    - `-v, --version <version>` - removes version of pack or file
-    - `-g, --global` - removes from global
+  - `remove <name>` - remove pack
+    - `-p, --pack` - remove pack
+    - `-f, --file` - remove file
+    - `-v <version>` - remove version of pack or file
+    - `-g, --global` - remove from global
   - `set <pack> <version>`
     - `-g, --global` - sets in global
   - :white_check_mark: `list`
