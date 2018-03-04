@@ -45,14 +45,14 @@ caporal.command('remove')
   .option('-f, --file <filename>', 'remove file')
   .option('-v <version>', 'version of pack or file')
   .option('-g, --global')
-  .action((args, options) => {
+  .action(async (args, options) => {
     try {
       const manager = new Manager(true, options.global);
 
       if (options.file) {
         manager.removeFile(args.packname, options.file, options.version);
       } else {
-        manager.removePack(args.packname, options.version);
+        await manager.removePack(args.packname, options.version);
       }
     } catch (err) {
       console.log(chalk.red(err));

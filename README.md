@@ -70,7 +70,6 @@ $ npm install nfvm -g
 
 ### TODO
 - **Ability to use id's for packs and files**
-- **If remove pack version, then set default version automaticly**
 - **Option to remove files from folder when removing pack/pack version, file/file version**
 - **API**
   When app starts from cmd the nfvm changes files in destination folders.
