@@ -3,7 +3,6 @@
 
   <a href="https://www.npmjs.com/package/nfvm"><img src="https://img.shields.io/npm/v/nfvm.svg?style=flat-square" alt="NPM version"></a>
   <a href="https://www.npmjs.com/package/nfvm"><img src="https://img.shields.io/npm/dt/nfvm.svg?style=flat-square"></a>
-
   <a href="https://codeclimate.com/github/notmedia/nfvm/maintainability"><img src="https://api.codeclimate.com/v1/badges/8ed0d6fd5d211a44511b/maintainability" /></a>
 </div>
 
@@ -71,6 +70,9 @@ $ npm install nfvm -g
 ### TODO
 - **Ability to use id's for packs and files**
 - **Option to remove files from folder when removing pack/pack version, file/file version**
+- **Show warning when pack/file/version exists**
+- **Destination path save like path to dir instead of path to file?**
+- **Add constants file**
 - **API**
   When app starts from cmd the nfvm changes files in destination folders.
   When app works in API mode (when using nfvm from code), I think this is a good idea for return stream/buffer of requested version of file, without changing file in destination folder.
