@@ -28,6 +28,7 @@
     "cli-table-redemption": "^1.0.1",
     "fs-extra": "^5.0.0",
     "inquirer": "^5.1.0",
+    "inquirer-directory": "^2.1.0",
     "inquirer-file-path": "^1.0.0",
     "jsonfile": "^4.0.0"
   },

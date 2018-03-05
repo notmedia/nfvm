@@ -66,18 +66,3 @@ $ npm install nfvm -g
     }]
   }
   ```
-
-### TODO
-- **Ability to use id's for packs and files**
-- **Option to remove files from folder when removing pack/pack version, file/file version**
-- **Show warning on create when pack/file/version exists**
-- **Destination path save like path to dir instead of path to file?**
-- **Add constants file**
-- **API**  
-  - Add additional options to get stream/buffer of file.
-- **SHA version comparing on change?**
-- **Add completion to cli commands**
-- **Write tests**
-- **Create readme**
-  - User guide
-  - API documentation
