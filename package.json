@@ -3,6 +3,9 @@
   "version": "0.1.0-3",
   "description": "Node File Version Manager",
   "main": "index.js",
+  "bin": {
+    "nfvm": "./bin/nfvm"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
