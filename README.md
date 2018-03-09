@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/logo.png">
+  <img src="doc/img/logo.png">
 </p>
 <p align="center">
   <a href="https://www.npmjs.com/package/nfvm"><img src="https://img.shields.io/npm/v/nfvm.svg?style=flat-square" alt="NPM version"></a>
