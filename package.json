@@ -7,6 +7,9 @@
     "bin": "./bin",
     "lib": "./lib"
   },
+  "bin": {
+    "nfvm": "./bin/nfvm"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
   },
