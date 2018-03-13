@@ -31,9 +31,9 @@ caporal.command('create')
       const manager = new Manager(true, options.global);
 
       if (options.file) {
-        await manager.createFile(args.packname, options.file, options.version, options.folder);
+        await manager.createFile(args.packname, options.file, options.v, options.folder);
       } else {
-        await manager.createPack(args.packname, options.version, options.folder);
+        await manager.createPack(args.packname, options.v, options.folder);
       }
     } catch (err) {
       console.log(chalk.red(err));
@@ -50,9 +50,9 @@ caporal.command('remove')
       const manager = new Manager(true, options.global);
 
       if (options.file) {
-        manager.removeFile(args.packname, options.file, options.version);
+        manager.removeFile(args.packname, options.file, options.v);
       } else {
-        await manager.removePack(args.packname, options.version);
+        await manager.removePack(args.packname, options.v);
       }
     } catch (err) {
       console.log(chalk.red(err));
