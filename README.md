@@ -58,6 +58,7 @@ $ npm install nfvm -g
       "files": [{
         "filename": "String",
         "destinationPath": "String",
+        "symlink": "Boolean",
         "versions": [{
           "name": "String",
           "sourcePath": "String",

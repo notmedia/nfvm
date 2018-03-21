@@ -1,6 +1,5 @@
 **v0.1**
 - Check that pack/file/version already exists.
-- When choose destination/source paths start prompt from current path
 - Move RFIVNE option to file?
 - Remove defaults?
 - List of pack versions
