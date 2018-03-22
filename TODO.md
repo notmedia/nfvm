@@ -1,8 +1,5 @@
 **v0.1**
 - Check that pack/file/version already exists.
-- Move RFIVNE option to file?
-- Remove defaults?
-- List of pack versions
 - User guide
 - Examples
 
@@ -13,5 +10,6 @@
 - Add completion to cli commands
 - Add additional options to get stream/buffer of file.
 - Create packs/files from folder
+- Add more info in list command.
 - API documentation
 - Tests

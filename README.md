@@ -54,10 +54,10 @@ $ npm install nfvm -g
       "defaultVersion": "String",
       "currentVersion": "String",
       "versions": "String[]",
-      "removeFileIfVersionNotExists": "Boolean",
       "files": [{
         "filename": "String",
         "destinationPath": "String",
+        "removeFileIfVersionNotExists": "Boolean",
         "symlink": "Boolean",
         "versions": [{
           "name": "String",
