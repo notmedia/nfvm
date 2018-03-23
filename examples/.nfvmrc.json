@@ -11,57 +11,57 @@
       "files": [
         {
           "filename": "1",
-          "destinationPath": "/path/to/repo/nfvm/examples/workflow/1",
+          "destinationPath": "/path/to/repo/examples/workflow/1",
           "removeFileIfVersionNotExists": true,
           "symlink": true,
           "versions": [
             {
               "versionName": "default",
-              "sourcePath": "/path/to/repo/nfvm/examples/files/default/1"
+              "sourcePath": "/path/to/repo/examples/files/default/1"
             },
             {
               "versionName": "test",
-              "sourcePath": "/path/to/repo/nfvm/examples/files/test/1"
+              "sourcePath": "/path/to/repo/examples/files/test/1"
             }
           ]
         },
         {
           "filename": "2",
-          "destinationPath": "/path/to/repo/nfvm/examples/workflow/2",
+          "destinationPath": "/path/to/repo/examples/workflow/2",
           "removeFileIfVersionNotExists": true,
           "symlink": false,
           "versions": [
             {
               "versionName": "default",
-              "sourcePath": "/path/to/repo/nfvm/examples/files/default/2"
+              "sourcePath": "/path/to/repo/examples/files/default/2"
             },
             {
               "versionName": "test",
-              "sourcePath": "/path/to/repo/nfvm/examples/files/test/2"
+              "sourcePath": "/path/to/repo/examples/files/test/2"
             }
           ]
         },
         {
           "filename": "3",
-          "destinationPath": "/path/to/repo/nfvm/examples/workflow/3",
+          "destinationPath": "/path/to/repo/examples/workflow/3",
           "removeFileIfVersionNotExists": true,
           "symlink": false,
           "versions": [
             {
               "versionName": "default",
-              "sourcePath": "/path/to/repo/nfvm/examples/files/default/3"
+              "sourcePath": "/path/to/repo/examples/files/default/3"
             }
           ]
         },
         {
           "filename": "4",
-          "destinationPath": "/path/to/repo/nfvm/examples/workflow/4",
+          "destinationPath": "/path/to/repo/examples/workflow/4",
           "removeFileIfVersionNotExists": false,
           "symlink": false,
           "versions": [
             {
               "versionName": "test",
-              "sourcePath": "/path/to/repo/nfvm/examples/files/test/4"
+              "sourcePath": "/path/to/repo/examples/files/test/4"
             }
           ]
         }
