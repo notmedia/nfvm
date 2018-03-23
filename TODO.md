@@ -11,5 +11,5 @@
 - Add additional options to get stream/buffer of file.
 - Create packs/files from folder
 - Add more info in list command.
-- API documentation
+- API + documentation
 - Tests
