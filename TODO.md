@@ -1,9 +1,11 @@
+# TODO List:
+
 **v0.1**
 - Check that pack/file/version already exists.
-- User guide
 
 **v0.2**
 - Ability to use id's for packs and files
+- Update files if work dir when add new file
 - Option to remove files from folder when removing pack/file/version
 - Checksum version comparing on change?
 - Option to check that pack version applied correctly
