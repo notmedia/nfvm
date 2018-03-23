@@ -3,9 +3,9 @@
 1. Clone repo.
 2. Open `/examples` folder
 
-    `files/` - this folder contains files of current pack. Each version of pack have own folder with files versions. I recommend to group files by versions, like here.
+    `files/` - this folder contains files of current pack. Each version of pack have own folder with files versions. I recommend to group files by versions, like here. Or if you want to use few packs in one folder you can firstly group them by packs.
 
-    `workflow/` - is a folder of your workflow (in real project it's a root folder of it). The nfvm works with current versions here.
+    `workflow/` - in real project it's a root folder for pack. The nfvm works with current versions here.
 
     `.nfvmrc.json` - config file, see [structure](https://github.com/notmedia/nfvm#nfvmrcjson-structure)
 

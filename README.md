@@ -15,13 +15,14 @@ So when I want to start/test app in needed config (with specific set of files) t
 
 The **nfvm** tool - is the first try to solve the problem of my daily pain. 
 
+### Resources
+[User Guide](https://github.com/notmedia/nfvm/blob/master/doc/GUIDE.md)  
+[TODO List](https://github.com/notmedia/nfvm/blob/master/TODO.md)
+
 ### Installing nfvm
 ```bash
 $ npm i nfvm -g
 ```
-### Resources
-[User Guide](https://github.com/notmedia/nfvm/blob/master/doc/GUIDE.md)  
-[TODO List](https://github.com/notmedia/nfvm/blob/master/TODO.md)
 ### CLI Commands
   - `init` - create local .nfvmrc.json config file
   - `create <packname>`
