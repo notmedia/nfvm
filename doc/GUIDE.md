@@ -7,7 +7,7 @@
 
     `workflow/` - in real project it's a root folder for pack. The nfvm works with current versions here.
 
-    `.nfvmrc.json` - config file, see [structure](https://github.com/notmedia/nfvm#nfvmrcjson-structure)
+    `.nfvmrc.json` - config file, see [structure](https://github.com/notmedia/nfvm#config-file)
 
 3. Open .nfvmrc.json file and replace `/path/to/repo/` to the full path of repository folder on your PC.
 4. Now, you can try the nfvm tool:
@@ -24,4 +24,4 @@ nfvm set example test
 
 All files are switched in `/examples/workflow` folder.
 
-The full list of CLI commands you can see [here](https://github.com/notmedia/nfvm#cli-commands)
+The full list of CLI commands with examples you can see [here](https://github.com/notmedia/nfvm#cli-commands)
