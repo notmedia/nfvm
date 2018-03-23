@@ -24,7 +24,6 @@ caporal.command('create')
   .argument('<packname>')
   .option('-f, --file <filename>', 'create file')
   .option('-v <version>', 'version of pack or file')
-  // .option('--folder <path>', 'create from folder')
   .option('-g, --global')
   .action(async (args, options) => {
     try {

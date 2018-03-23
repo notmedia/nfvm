@@ -17,33 +17,23 @@ The **nfvm** tool - is the first try to solve the problem of my daily pain.
 
 ### Installing nfvm
 ```bash
-$ npm install nfvm -g
+$ npm i nfvm -g
 ```
 ### CLI commands
-  - :white_check_mark: `init` - create local .nfvmrc.json config file
-  - :white_check_mark: `create <packname>`
-    - :white_check_mark: `-f, --file <filename>` - create file
-    - :white_check_mark: `-v <version>` - create version of pack or file
-    - `--folder <path>` - create from folder  
-        Pack folder structure
-        ```
-          -pack
-          --version1
-          ---file1
-          ---file2
-          --version2
-          ---file2
-        ```    
-    - :white_check_mark: `-g, --global` - create in global
-  - :white_check_mark: `remove <packname>` - remove pack
-    - :white_check_mark: `-f, --file <filename>` - remove file
-    - :white_check_mark: `-v <version>` - remove version of pack or file
-    - :white_check_mark: `-g, --global` - remove from global
-  - :white_check_mark: `set <packname> <version>`
-    - :white_check_mark: `-g, --global` - sets in global
-  - :white_check_mark: `list`
-    - :white_check_mark: `-p, --pack <packname>` - files list in pack
-    - :white_check_mark: `-g, --global` - list from global
+  - `init` - create local .nfvmrc.json config file
+  - `create <packname>`
+    - `-f, --file <filename>` - create file
+    - `-v <version>` - create version of pack or file
+    - `-g, --global` - create in global
+  - `remove <packname>` - remove pack
+    - `-f, --file <filename>` - remove file
+    - `-v <version>` - remove version of pack or file
+    - `-g, --global` - remove from global
+  - `set <packname> <version>`
+    - `-g, --global` - sets in global
+  - `list`
+    - `-p, --pack <packname>` - files list in pack
+    - `-g, --global` - list from global
 
 ### .nfvmrc.json structure:
 
