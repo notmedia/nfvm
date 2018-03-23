@@ -41,50 +41,54 @@ $ npm i nfvm -g
 
 ## Examples
 
-Create pack `example`
+**Create** pack `example`
 ```bash
 nfvm create example
 ```
-Create version `default` for pack `example`
+**Create** version `default` for pack `example`
 ```bash
 nfvm create example -v default
 ```
-Create file `1` for pack `example`
+**Create** file `1` for pack `example`  
+File options:  
+`symlink` - if true then on switch pack version creates symlink to file instead of replacing it.  
+`removeFileIfVersionNotExists` - (RFIVNE) if true then on switch pack version if file for this version not exists removes it from working directory. If option sets to false then the old file version stays in working directory.  
 ```bash
 nfvm create example -f 1
 ```
-Create version `default` for file `1` for pack `example`
+
+**Create** version `default` for file `1` for pack `example`
 ```bash
 nfvm create example -f 1 -v default
 ```
 
-Remove pack `example`
+**Remove** pack `example`
 ```bash
 nfvm remove example
 ```
-Remove version `default` for pack `example`
+**Remove** version `default` for pack `example`
 ```bash
 nfvm remove example -v default
 ```
-Remove file `1` for pack `example`
+**Remove** file `1` for pack `example`
 ```bash
 nfvm remove example -f 1
 ```
-Remove version `default` for file `1` for pack `example`
+**Remove** version `default` for file `1` for pack `example`
 ```bash
 nfvm remove example -f 1 -v default
 ```
 
-Set `default` version for `example` pack
+**Set** `default` version for `example` pack
 ```bash
 nfvm set example default
 ```
 
-List of all packs
+**List** of all packs
 ```bash
 nfvm list
 ```
-List of all files in `example` pack
+**List** of all files in `example` pack
 ```bash
 nfvm list -p example
 ```
