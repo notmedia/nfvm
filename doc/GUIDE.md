@@ -1,4 +1,4 @@
-# User guide
+# User Guide
 
 1. Clone repo.
 2. Open `/examples` folder
