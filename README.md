@@ -15,9 +15,32 @@ So when I want to start/test app in needed config (with specific set of files) t
 
 The **nfvm** tool - is the first try to solve the problem of my daily pain. 
 
-## Resources
-[User Guide](https://github.com/notmedia/nfvm/blob/master/doc/GUIDE.md)  
-[TODO List](https://github.com/notmedia/nfvm/blob/master/TODO.md)
+## Terminology
+### Pack
+Is a set of files for the project or the part of it. Every file in this pack can have as many versions as you want.  
+For comfort controll of file versioning you can apply version **ONLY** for the pack. So when version of pack changes, all files in this pack switches to version of pack.
+
+| Parameter     | Type    | Description                              | Default Value|
+|---------------|---------|------------------------------------------|--------------|
+|name|String|pack name|''|
+|defaultVersion|String|name of default version|default|
+|currentVersion|String|name of current version|default|
+|versions|String[]|array of registered pack versions|[]|
+|files|File[]|array of `File` objects|[]|
+### File
+| Parameter     | Type    | Description                              | Default Value|
+|---------------|---------|------------------------------------------|--------------|
+|filename|String|the name of file in destination folder|''|
+|destinationPath|String|full path to destination folder|''|
+|removeFileIfVersionNotExists|Boolean|if true then when file version does not exists removes the old version of file from the destination directory. Otherwise the old version stays.|true|
+|symlink|Boolean|if true then creates symlink to file version in destination directory instead of replacing it.|true|
+|versions|FileVersion[]|array of `File Version` objects|[]|
+
+### File Version
+| Parameter     | Type    | Description                              | Default Value|
+|---------------|---------|------------------------------------------|--------------|
+|name|String|file version name (also should be in Pack.versions)|''|
+|sourcePath|String|full path to file|''|
 
 ## Installing nfvm
 ```bash
@@ -39,6 +62,10 @@ $ npm i nfvm -g
     - `-p, --pack <packname>` - files list in pack
     - `-g, --global` - list from global
 
+## Resources
+[User Guide](https://github.com/notmedia/nfvm/blob/master/doc/GUIDE.md)  
+[TODO List](https://github.com/notmedia/nfvm/blob/master/TODO.md)
+
 ## Examples
 
 **Create** pack `example`
@@ -49,10 +76,7 @@ nfvm create example
 ```bash
 nfvm create example -v default
 ```
-**Create** file `1` for pack `example`  
-File options:  
-`symlink` - if true then on switch pack version creates symlink to file instead of replacing it.  
-`removeFileIfVersionNotExists` - (RFIVNE) if true then on switch pack version if file for this version not exists removes it from working directory. If option sets to false then the old file version stays in working directory.  
+**Create** file `1` for pack `example`
 ```bash
 nfvm create example -f 1
 ```

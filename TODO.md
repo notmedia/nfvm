@@ -5,6 +5,7 @@
 
 **v0.2**
 - Ability to use id's for packs and files
+- Add alias to file? Because sometimes filename too long
 - Update files if work dir when add new file
 - Option to remove files from folder when removing pack/file/version
 - Checksum version comparing on change?
