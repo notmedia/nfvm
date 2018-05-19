@@ -1,5 +1,7 @@
 # TODO List:
 
+[x] Add progress info on switching version
+
 **v0.2**
 - Ability to use id's for packs and files
 - Add alias to version, file? Because sometimes filename too long
@@ -13,6 +15,5 @@
 - Update file version paths.  
   Idea: when user creates pack on first PC and move project to the second PC, paths to files may be incorrect. Add option to update this paths automatically.
 - Add more info in list command.
-- Add progress info on switching version
 - API + documentation
 - Tests
