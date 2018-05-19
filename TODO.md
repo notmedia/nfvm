@@ -3,6 +3,7 @@
 [x] Add progress info on switching version
 
 **v0.2**
+- Add version to pack when adding new version for file and this version does not exists.
 - Ability to use id's for packs and files
 - Add alias to version, file? Because sometimes filename too long
 - Update files if work dir when add new file
