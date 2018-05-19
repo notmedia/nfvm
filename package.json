@@ -1,6 +1,6 @@
 {
   "name": "nfvm",
-  "version": "0.1.1",
+  "version": "0.2.0-1",
   "description": "Node File Version Manager",
   "main": "index.js",
   "directories": {
@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/notmedia/nfvm#readme",
   "dependencies": {
-    "bluebird": "^3.5.1",
     "caporal": "^0.9.0",
     "chalk": "^2.3.1",
     "cli-table-redemption": "^1.0.1",
@@ -38,7 +37,8 @@
     "inquirer": "^5.1.0",
     "inquirer-directory": "^2.1.0",
     "inquirer-file-path": "^1.0.0",
-    "jsonfile": "^4.0.0"
+    "jsonfile": "^4.0.0",
+    "listr": "^0.14.1"
   },
   "devDependencies": {
     "eslint": "^4.18.0",
