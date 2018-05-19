@@ -1,11 +1,8 @@
 # TODO List:
 
-**v0.1**
-- Check that pack/file/version already exists.
-
 **v0.2**
 - Ability to use id's for packs and files
-- Add alias to file? Because sometimes filename too long
+- Add alias to version, file? Because sometimes filename too long
 - Update files if work dir when add new file
 - Option to remove files from folder when removing pack/file/version
 - Checksum version comparing on change?
