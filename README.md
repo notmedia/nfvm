@@ -132,7 +132,7 @@ Config file name is `.nfvmrc.json` with structure:
         "symlink": "Boolean",
         "versions": [{
           "name": "String",
-          "sourcePath": "String",
+          "path": "String",
         }]
       }]
     }]
