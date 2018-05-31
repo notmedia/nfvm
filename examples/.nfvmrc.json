@@ -16,12 +16,12 @@
           "symlink": true,
           "versions": [
             {
-              "versionName": "default",
-              "sourcePath": "/path/to/repo/examples/files/default/1"
+              "name": "default",
+              "path": "/path/to/repo/examples/files/default/1"
             },
             {
-              "versionName": "test",
-              "sourcePath": "/path/to/repo/examples/files/test/1"
+              "name": "test",
+              "path": "/path/to/repo/examples/files/test/1"
             }
           ]
         },
@@ -32,12 +32,12 @@
           "symlink": false,
           "versions": [
             {
-              "versionName": "default",
-              "sourcePath": "/path/to/repo/examples/files/default/2"
+              "name": "default",
+              "path": "/path/to/repo/examples/files/default/2"
             },
             {
-              "versionName": "test",
-              "sourcePath": "/path/to/repo/examples/files/test/2"
+              "name": "test",
+              "path": "/path/to/repo/examples/files/test/2"
             }
           ]
         },
@@ -48,8 +48,8 @@
           "symlink": false,
           "versions": [
             {
-              "versionName": "default",
-              "sourcePath": "/path/to/repo/examples/files/default/3"
+              "name": "default",
+              "path": "/path/to/repo/examples/files/default/3"
             }
           ]
         },
@@ -60,8 +60,8 @@
           "symlink": false,
           "versions": [
             {
-              "versionName": "test",
-              "sourcePath": "/path/to/repo/examples/files/test/4"
+              "name": "test",
+              "path": "/path/to/repo/examples/files/test/4"
             }
           ]
         }
