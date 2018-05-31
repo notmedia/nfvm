@@ -11,6 +11,7 @@ SYNC:
 - Option to check that pack version applied correctly (sync function?)
 - Update files in work dir when add new file  
   This means add this new file of current version to work dir. Like sync function.
+- Add sync command to pack
 
 - Add version to pack when adding new version for file and this version does not exists.
 - Update file version paths.  
