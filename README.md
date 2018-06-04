@@ -39,7 +39,7 @@ For comfort controll of file versioning you can apply version **ONLY** for the p
 | Parameter     | Type    | Description                              | Default Value|
 |---------------|---------|------------------------------------------|--------------|
 |name|String|file version name (also should be in Pack.versions)|''|
-|sourcePath|String|full path to file|''|
+|path|String|full path to file|''|
 
 ## Installing nfvm
 ```bash
