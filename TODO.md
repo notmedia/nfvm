@@ -4,6 +4,8 @@
 
 **v0.2**
 
+- ! use another args parser instead of caporal bcs its too slow.. Thinking about yargs.
+
 - Create packs/files from folder
 
 SYNC:

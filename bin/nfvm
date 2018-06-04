@@ -63,24 +63,26 @@ caporal.command('set')
   .argument('<version>')
   .option('-g, --global')
   .action(async (args, options) => {
-    const manager = new Manager(true, options.global);
+    try {
+      const manager = new Manager(true, options.global);
 
-    manager.set(args.packname, args.version)
-      .catch((err) => {
-        console.log(chalk.red(err));
-      });
+      await manager.set(args.packname, args.version);
+    } catch (err) {
+      console.log(chalk.red(err));
+    }
   });
 
 caporal.command('list')
   .option('-p, --pack <packname>')
   .option('-g, --global')
   .action((args, options) => {
-    const manager = new Manager(true, options.global);
+    try {
+      const manager = new Manager(true, options.global);
 
-    manager.list(options.pack)
-      .catch((err) => {
-        console.log(chalk.red(err));
-      });
+      manager.list(options.pack);
+    } catch (err) {
+      console.log(chalk.red(err));
+    }
   });
 
 caporal.parse(process.argv);
