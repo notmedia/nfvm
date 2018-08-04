@@ -1,88 +1,101 @@
 #!/usr/bin/env node
 
-'use strict';
-
-const caporal = require('caporal');
 const chalk = require('chalk');
 
-const pkg = require('../package.json');
 const { Manager } = require('../lib/API');
-
-caporal.version(pkg.version);
-
-caporal.command('init')
-  .description('create local .nfvmrc.json config file')
-  .action(() => {
+const { argv } = require('yargs')
+  .command('init', 'initialize .nfvmrc.json config file', {}, () => {
     try {
       Manager.initialize();
     } catch (err) {
       console.log(chalk.red(err));
     }
-  });
-
-caporal.command('create')
-  .argument('<packname>')
-  .option('-f, --file <filename>', 'create file')
-  .option('-v <version>', 'version of pack or file')
-  .option('-g, --global')
-  .action(async (args, options) => {
+  })
+  .command('create <packname>', 'create pack/file/version', (yargs) => {
+    yargs
+      .positional('packname', {
+        type: 'string',
+      })
+      .option('file', {
+        alias: 'f',
+        describe: 'create file',
+      })
+      .option('version', {
+        alias: 'v',
+        describe: 'create version of pack or file',
+      });
+  }, async (argv) => {
     try {
-      const manager = new Manager(true, options.global);
+      const manager = new Manager(true, argv.global);
 
-      if (options.file) {
-        await manager.createFile(args.packname, options.file, options.v, options.folder);
+      if (argv.file) {
+        await manager.createFile(argv.packname, argv.file, argv.v);
       } else {
-        await manager.createPack(args.packname, options.v, options.folder);
+        await manager.createPack(argv.packname, argv.v);
       }
     } catch (err) {
       console.log(chalk.red(err));
     }
-  });
-
-caporal.command('remove')
-  .argument('<packname>')
-  .option('-f, --file <filename>', 'remove file')
-  .option('-v <version>', 'version of pack or file')
-  .option('-g, --global')
-  .action(async (args, options) => {
+  })
+  .command('remove <packname>', 'remove pack/file/version', (yargs) => {
+    yargs
+      .positional('packname', {
+        type: 'string',
+      })
+      .option('file', {
+        alias: 'f',
+        describe: 'remove file',
+      })
+      .option('version', {
+        alias: 'v',
+        describe: 'remove version of pack or file',
+      });
+  }, async (argv) => {
     try {
-      const manager = new Manager(true, options.global);
+      const manager = new Manager(true, argv.global);
 
-      if (options.file) {
-        manager.removeFile(args.packname, options.file, options.v);
+      if (argv.file) {
+        manager.removeFile(argv.packname, argv.file, argv.v);
       } else {
-        await manager.removePack(args.packname, options.v);
+        await manager.removePack(argv.packname, argv.v);
       }
     } catch (err) {
       console.log(chalk.red(err));
     }
-  });
-
-caporal.command('set')
-  .argument('<packname>')
-  .argument('<version>')
-  .option('-g, --global')
-  .action(async (args, options) => {
+  })
+  .command('set <packname> <version>', 'switch pack version', (yargs) => {
+    yargs
+      .positional('packname', {
+        type: 'string',
+      })
+      .positional('version', {
+        type: 'string',
+      });
+  }, async (argv) => {
     try {
-      const manager = new Manager(true, options.global);
+      const manager = new Manager(true, argv.global);
 
-      await manager.set(args.packname, args.version);
+      await manager.set(argv.packname, argv.version);
     } catch (err) {
       console.log(chalk.red(err));
     }
-  });
-
-caporal.command('list')
-  .option('-p, --pack <packname>')
-  .option('-g, --global')
-  .action((args, options) => {
+  })
+  .command('list', '', (yargs) => {
+    yargs
+      .option('packname', {
+        alias: 'p',
+      });
+  }, (argv) => {
     try {
-      const manager = new Manager(true, options.global);
+      const manager = new Manager(true, argv.global);
 
-      manager.list(options.pack);
+      manager.list(argv.packname);
     } catch (err) {
       console.log(chalk.red(err));
     }
-  });
-
-caporal.parse(process.argv);
+  })
+  .option('global', {
+    alias: 'g',
+    default: false,
+  })
+  .help();
