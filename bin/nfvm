@@ -63,24 +63,24 @@ const { argv } = require('yargs')
       console.log(chalk.red(err));
     }
   })
-  .command('set <packname> <version>', 'switch pack version', (yargs) => {
+  .command('set <packname> <v>', 'switch pack version', (yargs) => {
     yargs
       .positional('packname', {
         type: 'string',
       })
-      .positional('version', {
+      .positional('v', {
         type: 'string',
       });
   }, async (argv) => {
     try {
       const manager = new Manager(true, argv.global);
 
-      await manager.set(argv.packname, argv.version);
+      await manager.set(argv.packname, argv.v);
     } catch (err) {
       console.log(chalk.red(err));
     }
   })
-  .command('list', '', (yargs) => {
+  .command('list', 'list of packs/files', (yargs) => {
     yargs
       .option('packname', {
         alias: 'p',
@@ -96,6 +96,9 @@ const { argv } = require('yargs')
   })
   .option('global', {
     alias: 'g',
+    default: false,
+  })
+  .option('verbose', {
     default: false,
   })
   .help();

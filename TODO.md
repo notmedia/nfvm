@@ -1,10 +1,11 @@
 # TODO List:
 
-[x] Add progress info on switching version
-
+[x] Add progress info on switching version.
+[x] Start using yargs instead of caporal.
 **v0.2**
-
-- ! use another args parser instead of caporal bcs its too slow.. Thinking about yargs.
+- Check that version exists
+- Handle errors
+- verbose logging
 
 - Create packs/files from folder
 
