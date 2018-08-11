@@ -10,6 +10,7 @@ module.exports = {
     'no-console': 0,
     'no-plusplus': 0,
     'no-param-reassign': 0,
-    "class-methods-use-this": 0,
+    'class-methods-use-this': 0,
+    'no-else-return': 0,
   },
 };

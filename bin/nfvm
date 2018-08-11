@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+/* eslint no-unused-vars: off, no-shadow: off */
+
 const chalk = require('chalk');
 
 const { Manager } = require('../lib/API');
