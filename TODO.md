@@ -2,8 +2,9 @@
 
 [x] Add progress info on switching version.
 [x] Start using yargs instead of caporal.
+[x] Check that version exist
+
 **v0.2**
-- Check that version exists
 - Handle errors
 - verbose logging
 
