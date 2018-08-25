@@ -5,6 +5,7 @@
 [x] Check that version exist
 
 **v0.2**
+- Add new switching mode - simply rename the path folder or file to destination path instead of copy it.
 - Handle errors
 - verbose logging
 
