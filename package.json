@@ -1,6 +1,6 @@
 {
   "name": "nfvm",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "Node File Version Manager",
   "main": "index.js",
   "directories": {
