@@ -35,7 +35,7 @@
     "fs-extra": "^5.0.0",
     "inquirer": "^5.1.0",
     "inquirer-directory": "^2.1.0",
-    "inquirer-file-path": "^1.0.0",
+    "inquirer-file-path": "^1.0.1",
     "jsonfile": "^4.0.0",
     "listr": "^0.14.1",
     "sha": "^2.0.1",
