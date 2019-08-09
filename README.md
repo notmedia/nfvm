@@ -8,6 +8,12 @@
 </p>
 
 ## NFVM - Node File Version Manager
+
+## Installing
+```bash
+$ npm i nfvm -g
+```
+
 ## Concept
 
 While writing code I often run into problem of fast switching between versions of local files which are ignored by git. This files for security reason can't be in repository or they are individual for each server.
@@ -40,8 +46,3 @@ For comfort controll of file versioning you can apply version **ONLY** for the p
 |---------------|---------|------------------------------------------|--------------|
 |name|String|file version name (also should be in Pack.versions)|''|
 |path|String|full path to file|''|
-
-## Installing nfvm
-```bash
-$ npm i nfvm -g
-```
