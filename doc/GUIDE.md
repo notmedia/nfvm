@@ -1,7 +1,7 @@
 # User Guide
 
 1. Clone repo.
-2. Open `/examples` folder
+2. Open `/doc/examples` folder
 
     `files/` - this folder contains files of current pack. Each version of pack have own folder with files versions. I recommend to group files by versions, like here. Or if you want to use few packs in one folder you can firstly group them by packs.
 
@@ -22,6 +22,6 @@ Switch pack "example" version to "test":
 nfvm set example test
 ```
 
-All files are switched in `/examples/workflow` folder.
+All files are switched in `/doc/examples/workflow` folder.
 
 The full list of CLI commands with examples you can see [here](https://github.com/notmedia/nfvm#cli-commands)

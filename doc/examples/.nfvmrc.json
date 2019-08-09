@@ -11,17 +11,17 @@
       "files": [
         {
           "filename": "1",
-          "destinationPath": "/path/to/repo/examples/workflow/1",
+          "destinationPath": "/path/to/repo/doc/examples/workflow/1",
           "removeFileIfVersionNotExists": true,
           "symlink": true,
           "versions": [
             {
               "name": "default",
-              "path": "/path/to/repo/examples/files/default/1"
+              "path": "/path/to/repo/doc/examples/files/default/1"
             },
             {
               "name": "test",
-              "path": "/path/to/repo/examples/files/test/1"
+              "path": "/path/to/repo/doc/examples/files/test/1"
             }
           ]
         },
