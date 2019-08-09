@@ -29,7 +29,9 @@
     "url": "https://github.com/notmedia/nfvm/issues"
   },
   "homepage": "https://github.com/notmedia/nfvm#readme",
-  "dependencies": {},
+  "dependencies": {
+    "import-local": "^3.0.2"
+  },
   "devDependencies": {
     "@types/jest": "^24.0.17",
     "jest": "^24.8.0",
