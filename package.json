@@ -2,13 +2,9 @@
   "name": "nfvm",
   "version": "0.3.0",
   "description": "Node File Version Manager",
-  "main": "index.js",
-  "directories": {
-    "bin": "./bin",
-    "src": "./src"
-  },
+  "main": "dist/index.js",
   "bin": {
-    "nfvm": "./bin/nfvm"
+    "nfvm": "./bin/nfvm.js"
   },
   "scripts": {
     "test": "jest"
