@@ -4,13 +4,13 @@ import { getVersion } from '../../core';
 
 describe('getVersion', () => {
   it('should be a string ', () => {
-    const version: String = getVersion();
+    const version: string = getVersion();
 
     expect(typeof version).toBe('string');
   });
 
   it('should be a valid version', () => {
-    const version: String = getVersion();
+    const version: string = getVersion();
 
     expect(semver.valid(version)).not.toBe(null);
   })

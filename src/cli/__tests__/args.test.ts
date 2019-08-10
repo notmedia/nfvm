@@ -1,5 +1,5 @@
-import { CLI } from '../../interfaces';
 import { check } from '../../cli/args';
+import { CLI } from '../../interfaces';
 
 describe('check', () => {
   it('should return true for valid arguments', () => {
