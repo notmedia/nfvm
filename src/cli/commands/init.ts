@@ -1,5 +1,5 @@
-export function init(yargs) {
-  yargs
-    .command('test', 'test command', (_yargs) => {
-    });
+exports.command = 'test';
+exports.desc = 'test command';
+exports.handler = (_argv) => {
+  console.log('console.log init');
 }
