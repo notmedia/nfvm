@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/notmedia/nfvm#readme",
   "dependencies": {
+    "chalk": "^2.4.2",
     "import-local": "^3.0.2",
     "yargs": "^13.3.0"
   },
