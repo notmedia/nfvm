@@ -4,7 +4,7 @@
   "description": "Node File Version Manager",
   "main": "dist/index.js",
   "bin": {
-    "nfvm": "./bin/nfvm.js"
+    "nfvm": "./bin/nfvm"
   },
   "scripts": {
     "build": "tsc",
