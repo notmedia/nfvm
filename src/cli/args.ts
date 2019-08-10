@@ -1,6 +1,6 @@
 import { CLI } from '../interfaces';
 
-export function check(_argv: CLI.Argv) {
+export function check(_argv: CLI.Argv): Boolean {
   return true;
 }
 

@@ -4,6 +4,7 @@
     "moduleResolution": "node",
     "declaration": false,
     "noImplicitAny": false,
+    "resolveJsonModule": true,
     "removeComments": true,
     "noLib": false,
     "allowSyntheticDefaultImports": true,

@@ -8,7 +8,3 @@ describe('check', () => {
     expect(check(argv)).toBe(true);
   });
 });
-
-describe('build', () => {
-
-});
