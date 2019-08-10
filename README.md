@@ -7,7 +7,7 @@
   <a href="https://app.codacy.com/app/notmedia/nfvm"><img src="https://img.shields.io/codacy/grade/a81842a26143458abc7764c091c3f697.svg?style=flat-square"/></a>
 </p>
 
-## NFVM - Node File Version Manager
+## Node File Version Manager
 
 ## Installing
 ```bash
