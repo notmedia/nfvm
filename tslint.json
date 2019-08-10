@@ -5,6 +5,7 @@
   ],
   "linterOptions": {
     "exclude": [
+      "bin/**",
       "node_modules/**",
       "**/*.d.ts",
       "**/*.js"
