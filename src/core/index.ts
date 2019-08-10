@@ -1,3 +1,5 @@
+import * as pkg from '../../package.json';
+
 export function getVersion(): string {
-  return '0.3.0';
+  return pkg.version;
 }
