@@ -13,5 +13,5 @@ describe('getVersion', () => {
     const version: string = getVersion();
 
     expect(semver.valid(version)).not.toBe(null);
-  })
+  });
 });

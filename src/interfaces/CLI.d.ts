@@ -1,5 +1,3 @@
 import { Arguments } from 'yargs';
 
-export declare type Argv = Arguments<Partial<{
-
-}>>;
+export declare type Argv = Arguments<Partial<{}>>;
