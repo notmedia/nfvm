@@ -1,3 +1,4 @@
+// tslint:disable-next-line
 import * as semver from 'semver';
 
 import { getVersion } from '../../core';
