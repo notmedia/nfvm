@@ -1,3 +1,8 @@
+export enum SwitchMode {
+  DEFAULT = 'default',
+  SYMLINK = 'symlink',
+}
+
 export declare type Pack = {
   alias: string|string[];
   version: string;
@@ -8,6 +13,6 @@ export declare type Pack = {
 export declare type File = {
   filename: string;
   path: string;
-  symlink: boolean;
+  mode: SwitchMode;
   removeIfVersionNotExists: boolean;
 };
