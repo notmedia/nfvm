@@ -1,5 +1,6 @@
-import * as pkg from '../../package.json';
+// tslint:disable-next-line
+const { version } = require('../../package.json');
 
 export function getVersion(): string {
-  return pkg.version;
+  return version;
 }
