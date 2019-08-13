@@ -3,7 +3,14 @@ import { setVersion } from '../pack';
 
 describe('setVersion', () => {
   it('should switch version of pack', () => {
-    const pack: Core.Pack = setVersion({} as Core.Pack, 'test');
+    let pack: Core.Pack = {
+      alias: 'testPack',
+      availableVersions: ['default', 'test'],
+      files: [],
+      version: 'default',
+    };
+
+    pack = setVersion(pack, 'test');
 
     expect(pack.version).toBe('test');
   });
