@@ -2,7 +2,7 @@ import { Core } from '../../interfaces';
 import { setVersion } from '../pack';
 
 describe('setVersion', () => {
-  it('should switch version of pack', () => {
+  it('should switch version of pack', async () => {
     let pack: Core.Pack = {
       alias: 'testPack',
       availableVersions: ['default', 'test'],
@@ -10,7 +10,7 @@ describe('setVersion', () => {
       version: 'default',
     };
 
-    pack = setVersion(pack, 'test');
+    pack = await setVersion(pack, 'test');
 
     expect(pack.version).toBe('test');
   });
@@ -23,8 +23,9 @@ describe('setVersion', () => {
       version: 'default',
     };
 
-    expect(() => {
-      setVersion(pack, 'undefined_version');
-    }).toThrow();
+    expect.assertions(1);
+    expect(setVersion(pack, 'undefined_version'))
+      .rejects
+      .toEqual(new Error('Version does not exists.'));
   });
 });
