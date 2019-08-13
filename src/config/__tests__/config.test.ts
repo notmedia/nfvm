@@ -2,21 +2,21 @@ import { load, make, save } from '../../config';
 import { Core } from '../../interfaces';
 
 describe('load', () => {
-  it('should load config', async () => {
+  it('should load config from giving path', async () => {
     const config = await load('');
     expect(config).toBe(true);
   });
 });
 
 describe('save', () => {
-  it('should save config', async () => {
-    const config = await save([{} as Core.Pack]);
+  it('should save config at giving path', async () => {
+    const config = await save({} as Core.Config, '');
     expect(config).toBe(true);
   });
 });
 
 describe('make', () => {
-  it('should make config for path', async () => {
+  it('should make config for giving path', async () => {
     const config = await make('');
     expect(config).toBe(true);
   });

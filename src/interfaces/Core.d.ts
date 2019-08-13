@@ -3,6 +3,10 @@ export enum SwitchMode {
   SYMLINK = 'symlink',
 }
 
+export declare type Config = {
+  packs: Pack[];
+};
+
 export declare type Pack = {
   alias: string|string[];
   version: string;
