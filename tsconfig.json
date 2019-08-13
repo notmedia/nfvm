@@ -28,6 +28,7 @@
     "dist",
     "doc",
     "node_modules",
-    "**/__tests__/**/*"
+    "**/__tests__/**/*",
+    "**/__mocks__/**/*"
   ]
 }
