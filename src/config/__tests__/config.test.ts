@@ -1,8 +1,13 @@
+jest.mock('jsonfile');
+
+import * as jsonfile from 'jsonfile';
+
 import { load, make, save } from '../../config';
 import { Core } from '../../interfaces';
 
 describe('load', () => {
   it('should load config from giving path', async () => {
+    jsonfile.test();
     const config = await load('');
     expect(config).toBe(true);
   });
@@ -20,4 +25,8 @@ describe('make', () => {
     const config = await make('');
     expect(config).toBe(true);
   });
+});
+
+afterAll(() => {
+  jest.unmock('jsonfile');
 });
