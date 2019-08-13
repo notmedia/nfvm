@@ -9,8 +9,15 @@ describe('setVersion', () => {
   });
 
   it('should throw error for undefined version', () => {
+    const pack: Core.Pack = {
+      alias: 'testPack',
+      availableVersions: ['default'],
+      files: [],
+      version: 'default',
+    };
+
     expect(() => {
-      setVersion({} as Core.Pack, 'undefined_version');
+      setVersion(pack, 'undefined_version');
     }).toThrow();
   });
 });
