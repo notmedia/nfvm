@@ -1,6 +1,10 @@
+import * as jsonfile from 'jsonfile';
+
 import { Core } from '../interfaces';
 
-export async function load(_path: string) {}
+export function load(path: string): Promise<Core.Config> {
+  return jsonfile.readFile(path);
+}
 
 export async function save(_config: Core.Config, _path: string) {}
 
