@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import { join } from 'path';
 import * as util from 'util';
 
 import { Core } from '../../interfaces';
@@ -12,7 +13,7 @@ export async function make(_path: string): Promise<Core.Config> {
 }
 
 export async function getSubDirectories(rootPath: string): Promise<string[]> {
-  const paths = await readdir(rootPath);
+  const paths = (await readdir(rootPath)).map(path => join(rootPath, path));
 
   return Promise.all(paths.map(async path => ({
     isDirectory: (await status(path)).isDirectory(),

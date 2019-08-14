@@ -38,13 +38,6 @@ describe('save', () => {
   });
 });
 
-// describe('make', () => {
-//   it('should make config for giving path', async () => {
-//     const config = await make('');
-//     expect(config).toBe(true);
-//   });
-// });
-
 afterAll(() => {
   jest.unmock('jsonfile');
 });
