@@ -25,6 +25,7 @@ describe('load', () => {
   });
 
   it('should throw error for unexpected path', () => {
+    expect.assertions(1);
     expect(load('test.json')).rejects.toBeInstanceOf(Error);
   });
 });
