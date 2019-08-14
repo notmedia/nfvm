@@ -2,23 +2,23 @@ jest.mock('jsonfile');
 
 import * as jsonfile from 'jsonfile';
 
-import { load } from '../../config';
+import { load, save } from '../../config';
 import { Core } from '../../interfaces';
 
+const MOCK_CONFIG: Core.Config = {
+  packs: [],
+};
+
+const MOCK_FILE_INFO = [{
+  data: MOCK_CONFIG,
+  path: 'nfvm.json',
+}];
+
+beforeEach(() => {
+  jsonfile.__setMockFiles(MOCK_FILE_INFO);
+});
+
 describe('load', () => {
-  const MOCK_CONFIG: Core.Config = {
-    packs: [],
-  };
-
-  const MOCK_FILE_INFO = [{
-    data: MOCK_CONFIG,
-    path: 'nfvm.json',
-  }];
-
-  beforeEach(() => {
-    jsonfile.__setMockFiles(MOCK_FILE_INFO);
-  });
-
   it('should load config from giving path', async () => {
     const config: Core.Config = await load('nfvm.json');
     expect(config.packs).toStrictEqual([]);
@@ -29,12 +29,13 @@ describe('load', () => {
   });
 });
 
-// describe('save', () => {
-//   it('should save config at giving path', async () => {
-//     const config = await save({} as Core.Config, '');
-//     expect(config).toBe(true);
-//   });
-// });
+describe('save', () => {
+  it('should save config at giving path', async () => {
+    await save('test.json', MOCK_CONFIG);
+    const config: Core.Config = await load('test.json');
+    expect(config.packs).toStrictEqual([]);
+  });
+});
 
 // describe('make', () => {
 //   it('should make config for giving path', async () => {

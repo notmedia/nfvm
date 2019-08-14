@@ -1,6 +1,6 @@
 'use strict';
 
-// import { Core } from '../../interfaces';
+import { Core } from '../../interfaces';
 
 const jsonfile: any = jest.genMockFromModule('jsonfile');
 
@@ -24,9 +24,15 @@ function readFile(path: string) {
     });
 }
 
-// async function writeFile(config: Core.Config) {}
+async function writeFile(path: string, config: Core.Config, _options: object) {
+  return Promise.resolve()
+    .then(() => {
+      files[path] = config;
+    });
+}
 
 jsonfile.__setMockFiles = __setMockFiles;
 jsonfile.readFile = readFile;
+jsonfile.writeFile = writeFile;
 
 export = jsonfile;
