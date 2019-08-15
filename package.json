@@ -7,7 +7,7 @@
     "nfvm": "./bin/nfvm"
   },
   "scripts": {
-    "build": "rm -r dist/ && tsc",
+    "build": "rm -rf dist/ && tsc",
     "lint": "tslint -p ./tsconfig.json",
     "test": "jest --verbose",
     "test-with-coverage": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage"
