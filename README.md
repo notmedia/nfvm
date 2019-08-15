@@ -18,10 +18,10 @@ $ npm i nfvm -g
 
 ## Concept
 
-While writing code I often run into problem of fast switching between versions of local files which are ignored by git. This files for security reason can't be in repository or they are individual for each server.
+While writing code I often run into problem of fast switching between versions of local files which are ignored by git. This files for security reason can't be in repository or they are individual for each server or app configuration.
 So when I want to start/test app in needed config (with specific set of files) the switching process is too slow.
 
-The **nfvm** tool - is the try to solve the problem of my daily pain.
+The **nfvm** tool solves the problem of my daily pain.
 ## Terminology
 ### Pack
 Is a set of files for the project or the part of it. Every file in this pack can have as many versions as you want.  
