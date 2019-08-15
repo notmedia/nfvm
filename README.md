@@ -5,10 +5,11 @@
   Node File Version Manager
 </p>
 <p align="center">
-  <a href="https://www.npmjs.com/package/nfvm"><img src="https://img.shields.io/npm/v/nfvm.svg?style=flat-square" alt="NPM version"></a>
+  <a href="https://www.npmjs.com/package/nfvm"><img src="https://img.shields.io/npm/v/nfvm?color=50C72B&label=npm-version&style=flat-square" alt="NPM version"></a>
   <a href="https://www.npmjs.com/package/nfvm"><img src="https://img.shields.io/npm/dt/nfvm.svg?style=flat-square"></a>
+  <a href="https://app.codacy.com/app/notmedia/nfvm"><img src="https://img.shields.io/codacy/coverage/a81842a26143458abc7764c091c3f697/v0.3?style=flat-square"></a>
   <a href="https://app.codacy.com/app/notmedia/nfvm"><img src="https://img.shields.io/codacy/grade/a81842a26143458abc7764c091c3f697.svg?style=flat-square"/></a>
-  <img src="https://img.shields.io/github/license/notmedia/nfvm?style=flat-square">
+  <img src="https://img.shields.io/github/license/notmedia/nfvm?color=50C72B&style=flat-square">
 </p>
 
 ## Installing
