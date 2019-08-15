@@ -37,6 +37,16 @@ export async function getSubDirectories(rootPath: string): Promise<string[]> {
     });
 }
 
-export async function getFilesFromDirectory(_path: string): Promise<string[]> {
-  return Promise.resolve([]);
+export async function getFilesFromDirectory(rootPath: string): Promise<string[]> {
+  const paths = (await readdir(rootPath)).map(path => join(rootPath, path));
+
+  return Promise.all(paths.map(async path => ({
+    isDirectory: (await status(path)).isDirectory(),
+    path,
+  })))
+    .then(files => {
+      return files
+        .filter(file => !file.isDirectory)
+        .map(file => file.path);
+    });
 }
