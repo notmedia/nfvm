@@ -22,7 +22,13 @@ export async function make(path: string, alias: string): Promise<Core.Config> {
   for (const directory of directories) {
     const filesFromDirectory = await getFilesFromDirectory(directory);
     for (const fileFromDirectory of filesFromDirectory) {
-      files[basename(fileFromDirectory)] = {};
+      const filename = basename(fileFromDirectory);
+      files[filename] = {
+        filename,
+        mode: 'default',
+        path: fileFromDirectory,
+        removeIfVersionNotExists: true,
+      };
     }
   }
 

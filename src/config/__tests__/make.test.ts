@@ -29,9 +29,10 @@ describe('make', () => {
 
     const config: Core.Config = await make(temp, 'testMake');
 
-    expect(config.packs.length).toEqual(1);
-    expect(config.packs[0].alias).toEqual('testMake');
-    expect(config.packs[0].version).toEqual('v1');
-    expect(config.packs[0].files.length).toEqual(2);
+    expect(config.packs.length).toBe(1);
+    expect(config.packs[0].alias).toBe('testMake');
+    expect(config.packs[0].version).toBe('v1');
+    expect(config.packs[0].files.length).toBe(2);
+    expect(config.packs[0].files.map(item => item.filename).includes('file1')).toBe(true);
   });
 });
