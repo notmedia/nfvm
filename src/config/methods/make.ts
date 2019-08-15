@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { join, posix, win32 } from 'path';
+import { basename, join } from 'path';
 import * as util from 'util';
 
 import { Core } from '../../interfaces';
@@ -43,10 +43,6 @@ export function getSubDirectories(path: string): Promise<string[]> {
 
 export function getFilesFromDirectory(path: string): Promise<string[]> {
   return getPaths(path, false);
-}
-
-function basename(path: string): string {
-  return process.platform === 'win32' ? win32.basename(path) : posix.basename(path);
 }
 
 async function getPaths(rootPath: string, isDirectory: boolean): Promise<string[]> {
