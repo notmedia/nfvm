@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { join } from 'path';
+import { join, posix, win32 } from 'path';
 import * as util from 'util';
 
 import { Core } from '../../interfaces';
@@ -7,7 +7,7 @@ import { Core } from '../../interfaces';
 const readdir = util.promisify(fs.readdir);
 const status = util.promisify(fs.stat);
 
-export async function make(_path: string, alias: string): Promise<Core.Config> {
+export async function make(path: string, alias: string): Promise<Core.Config> {
   const config: Core.Config = { packs: [] };
   const pack: Core.Pack = {
     alias,
@@ -16,8 +16,18 @@ export async function make(_path: string, alias: string): Promise<Core.Config> {
     version: '',
   };
 
-  // const directories = await getSubDirectories(path);
+  const directories: string[] = await getSubDirectories(path);
+  const files = {};
 
+  for (const directory of directories) {
+    const filesFromDirectory = await getFilesFromDirectory(directory);
+    for (const fileFromDirectory of filesFromDirectory) {
+      files[basename(fileFromDirectory)] = {};
+    }
+  }
+
+  pack.version = basename(directories[0]);
+  pack.files = Object.values(files);
   config.packs.push(pack);
 
   return config;
@@ -33,6 +43,10 @@ export function getSubDirectories(path: string): Promise<string[]> {
 
 export function getFilesFromDirectory(path: string): Promise<string[]> {
   return getPaths(path, false);
+}
+
+function basename(path: string): string {
+  return process.platform === 'win32' ? win32.basename(path) : posix.basename(path);
 }
 
 async function getPaths(rootPath: string, isDirectory: boolean): Promise<string[]> {
