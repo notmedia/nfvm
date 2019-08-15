@@ -23,6 +23,10 @@ export async function make(_path: string, alias: string): Promise<Core.Config> {
   return config;
 }
 
+export async function makeFromConfig(_path: string, _config: Core.Config): Promise<Core.Config> {
+  return Promise.resolve({} as Core.Config);
+}
+
 export function getSubDirectories(path: string): Promise<string[]> {
   return getPaths(path, true);
 }
