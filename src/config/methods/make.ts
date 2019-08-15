@@ -23,21 +23,15 @@ export async function make(path: string, alias: string): Promise<Core.Config> {
   return config;
 }
 
-export async function getSubDirectories(rootPath: string): Promise<string[]> {
-  const paths = (await readdir(rootPath)).map(path => join(rootPath, path));
-
-  return Promise.all(paths.map(async path => ({
-    isDirectory: (await status(path)).isDirectory(),
-    path,
-  })))
-    .then(files => {
-      return files
-        .filter(file => file.isDirectory)
-        .map(file => file.path);
-    });
+export function getSubDirectories(path: string): Promise<string[]> {
+  return getPaths(path, true);
 }
 
-export async function getFilesFromDirectory(rootPath: string): Promise<string[]> {
+export function getFilesFromDirectory(path: string): Promise<string[]> {
+  return getPaths(path, false);
+}
+
+async function getPaths(rootPath: string, isDirectory: boolean): Promise<string[]> {
   const paths = (await readdir(rootPath)).map(path => join(rootPath, path));
 
   return Promise.all(paths.map(async path => ({
@@ -46,7 +40,7 @@ export async function getFilesFromDirectory(rootPath: string): Promise<string[]>
   })))
     .then(files => {
       return files
-        .filter(file => !file.isDirectory)
+        .filter(file => isDirectory ? file.isDirectory : !file.isDirectory)
         .map(file => file.path);
     });
 }
