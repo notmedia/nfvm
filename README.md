@@ -2,7 +2,7 @@
   <img src="doc/img/logo.png">
 </p>
 <p align="center">
-  Node File Version Manager
+  <b> Node File Version Manager </b>
 </p>
 <p align="center">
   <a href="https://www.npmjs.com/package/nfvm"><img src="https://img.shields.io/npm/v/nfvm?color=50C72B&label=npm-version&style=flat-square" alt="NPM version"></a>
