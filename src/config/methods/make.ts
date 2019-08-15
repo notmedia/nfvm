@@ -7,7 +7,7 @@ import { Core } from '../../interfaces';
 const readdir = util.promisify(fs.readdir);
 const status = util.promisify(fs.stat);
 
-export async function make(path: string, alias: string): Promise<Core.Config> {
+export async function make(_path: string, alias: string): Promise<Core.Config> {
   const config: Core.Config = { packs: [] };
   const pack: Core.Pack = {
     alias,
@@ -16,7 +16,7 @@ export async function make(path: string, alias: string): Promise<Core.Config> {
     version: '',
   };
 
-  pack.availableVersions = await getSubDirectories(path);
+  // const directories = await getSubDirectories(path);
 
   config.packs.push(pack);
 
