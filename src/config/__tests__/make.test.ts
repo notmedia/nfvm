@@ -34,5 +34,6 @@ describe('make', () => {
     expect(config.packs[0].version).toBe('v1');
     expect(config.packs[0].files.length).toBe(2);
     expect(config.packs[0].files.map(item => item.filename).includes('file1')).toBe(true);
+    expect(config.packs[0].files[0].versions.map(item => item.alias)).toBe(['v1', 'v2']);
   });
 });

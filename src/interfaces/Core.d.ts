@@ -19,4 +19,10 @@ export declare type File = {
   path: string;
   mode: SwitchMode;
   removeIfVersionNotExists: boolean;
+  versions: FileVersion[];
 };
+
+export declare type FileVersion = {
+  alias: string;
+  path: string;
+}
