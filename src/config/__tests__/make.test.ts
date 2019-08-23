@@ -2,7 +2,7 @@
 import { copyFixtureIntoTempDir } from 'jest-fixtures';
 
 import { Core } from '../../interfaces';
-import { getFilesFromDirectory, getSubDirectories, make } from '../methods/make';
+import { getFilesFromDirectory, getSubDirectories, makeConfig, makePack } from '../methods/make';
 
 describe('getSubDirectories', () => {
   it('should return all sub directories from given path', async () => {
@@ -23,17 +23,29 @@ describe('getFilesFromDirectory', () => {
   });
 });
 
-describe('make', () => {
+describe('makePack', () => {
+  it('should return valid pack', async () => {
+    const temp: string = await copyFixtureIntoTempDir(__dirname, 'make-fixture');
+
+    const pack: Core.Pack = await makePack(temp, 'testMake');
+
+    expect(pack.alias).toBe('testMake');
+    expect(pack.version).toBe('v1');
+    expect(pack.availableVersions.length).toBe(2);
+    expect(pack.availableVersions).toBe(['v1', 'v2']);
+    expect(pack.files.length).toBe(2);
+    expect(pack.files.filter(file => file.mode === Core.SwitchMode.SYMLINK).length).toBe(2);
+    expect(pack.files.filter(file => file.removeIfVersionNotExists).length).toBe(2);
+    expect(pack.files.map(file => file.filename)).toBe(['file1', 'file2']);
+  });
+});
+
+describe('makeConfig', () => {
   it('should return valid config', async () => {
     const temp: string = await copyFixtureIntoTempDir(__dirname, 'make-fixture');
 
-    const config: Core.Config = await make(temp, 'testMake');
+    const config: Core.Config = await makeConfig([{path: temp, alias: 'testMake'}]);
 
     expect(config.packs.length).toBe(1);
-    expect(config.packs[0].alias).toBe('testMake');
-    expect(config.packs[0].version).toBe('v1');
-    expect(config.packs[0].files.length).toBe(2);
-    expect(config.packs[0].files.map(item => item.filename).includes('file1')).toBe(true);
-    expect(config.packs[0].files[0].versions.map(item => item.alias)).toBe(['v1', 'v2']);
   });
 });

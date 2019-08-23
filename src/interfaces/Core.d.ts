@@ -1,5 +1,5 @@
 export enum SwitchMode {
-  DEFAULT = 'default',
+  MV = 'mv',
   SYMLINK = 'symlink',
 }
 
