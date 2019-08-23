@@ -40,11 +40,9 @@ export async function makePack(path: string, alias: string): Promise<Core.Pack> 
   pack.version = basename(directories[0]);
   pack.files = Object.values(files);
 
-  return pack;
-}
+  // pack.availableVersions = [...new Set(...pack.files.map(file => file.versions.map(version => version.alias)))];
 
-export async function makeFromConfig(_path: string, _config: Core.Config): Promise<Core.Config> {
-  return Promise.resolve({} as Core.Config);
+  return pack;
 }
 
 export function getSubDirectories(path: string): Promise<string[]> {

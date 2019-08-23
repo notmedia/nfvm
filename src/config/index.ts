@@ -1,9 +1,10 @@
 import { load } from './methods/load';
-import { make } from './methods/make';
+import { makeConfig, makePack } from './methods/make';
 import { save} from './methods/save';
 
 export {
   load,
-  make,
+  makeConfig,
+  makePack,
   save,
 };
