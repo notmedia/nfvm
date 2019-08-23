@@ -47,5 +47,6 @@ describe('makeConfig', () => {
     const config: Core.Config = await makeConfig([{path: temp, alias: 'testMake'}]);
 
     expect(config.packs.length).toBe(1);
+    expect(config.packs[0].alias).toBe('testMake');
   });
 });
