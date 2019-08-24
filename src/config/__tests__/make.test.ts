@@ -117,6 +117,41 @@ describe('makePack', () => {
     expect(filenames.includes('file1')).toBe(true);
     expect(filenames.includes('file2')).toBe(true);
   });
+
+  it('should return valid pack with maped file paths', async () => {
+    const temp: string = await copyFixtureIntoTempDir(__dirname, 'make-fixture');
+
+    const map = [
+      {
+        filename: 'file1',
+        path: 'testpath1/file1',
+      },
+      {
+        filename: 'file2',
+        path: 'testpath2/file2',
+      },
+    ];
+
+    const pack: Core.Pack = await makePack(temp, 'testMake', map);
+
+    expect(pack.alias).toBe('testMake');
+    expect(['v1', 'v2'].includes(pack.version)).toBe(true);
+    expect(pack.availableVersions.length).toBe(2);
+    expect(pack.availableVersions.includes('v1')).toBe(true);
+    expect(pack.availableVersions.includes('v2')).toBe(true);
+    expect(pack.files.length).toBe(2);
+    expect(pack.files.filter(file => file.mode === 'symlink').length).toBe(2);
+    expect(pack.files.filter(file => file.removeIfVersionNotExists).length).toBe(2);
+
+    const filenames = pack.files.map(file => file.filename);
+
+    expect(filenames.includes('file1')).toBe(true);
+    expect(filenames.includes('file2')).toBe(true);
+
+    const paths = pack.files.map(file => file.path);
+    expect(paths.includes('testpath1/file1')).toBe(true);
+    expect(paths.includes('testpath2/file2')).toBe(true);
+  });
 });
 
 describe('makeConfig', () => {
