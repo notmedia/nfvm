@@ -1,5 +1,7 @@
-import { run } from './cli';
+import * as cli from './cli';
+import * as config from './config';
 
 export {
-  run,
+  cli,
+  config,
 };

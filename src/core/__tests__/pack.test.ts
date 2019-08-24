@@ -1,5 +1,17 @@
+// tslint:disable-next-line: no-implicit-dependencies
+// import { copyFixtureIntoTempDir } from 'jest-fixtures';
+
 import { Core } from '../../interfaces';
-import { setVersion } from '../pack';
+import {
+  // setFileVersion,
+  setVersion,
+} from '../pack';
+
+describe('setFileVersion', () => {
+  it('should switch version of file', async () => {
+    // const temp: string = await copyFixtureIntoTempDir(__dirname, 'pack');
+  });
+});
 
 describe('setVersion', () => {
   it('should switch version of pack', async () => {
@@ -27,11 +39,5 @@ describe('setVersion', () => {
     expect(setVersion(pack, 'undefined_version'))
       .rejects
       .toEqual(new Error('Version does not exists.'));
-  });
-});
-
-describe('setFileVersion', () => {
-  it('should switch version of file', () => {
-
   });
 });

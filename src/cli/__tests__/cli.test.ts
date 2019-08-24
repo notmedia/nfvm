@@ -1,4 +1,4 @@
-import { build } from '../../cli';
+import { build } from '../cli';
 
 describe('build', () => {
   it('should return only camelcased args ', () => {

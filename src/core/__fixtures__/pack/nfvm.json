@@ -1,0 +1,42 @@
+{
+  "packs": [
+    {
+      "alias": "test",
+      "availableVersions": [
+        "v2",
+        "v1"
+      ],
+      "files": [
+        {
+          "filename": "file1",
+          "mode": "symlink",
+          "path": "/",
+          "removeIfVersionNotExists": true,
+          "versions": [
+            {
+              "alias": "v2",
+              "path": "files/v2/file1"
+            },
+            {
+              "alias": "v1",
+              "path": "files/v1/file1"
+            }
+          ]
+        },
+        {
+          "filename": "file2",
+          "mode": "symlink",
+          "path": "/",
+          "removeIfVersionNotExists": true,
+          "versions": [
+            {
+              "alias": "v1",
+              "path": "files/v1/file2"
+            }
+          ]
+        }
+      ],
+      "version": "v1"
+    }
+  ]
+}
