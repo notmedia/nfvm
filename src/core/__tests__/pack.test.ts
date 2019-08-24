@@ -15,10 +15,32 @@ import {
 jest.unmock('jsonfile');
 
 describe('setFileVersion', () => {
-  it('should switch version of file', async () => {
+  it('should switch version of file with symlink mode', async () => {
     const temp: string = await copyFixtureIntoTempDir(__dirname, 'pack');
     const config: Core.Config = await load(path.join(temp, 'nfvm.json'));
     await setFileVersion(config.packs[0].files[0], 'v2');
+    expect(true).toBe(false);
+  });
+
+  it('should switch version of file with mv mode', async () => {
+    const temp: string = await copyFixtureIntoTempDir(__dirname, 'pack');
+    const config: Core.Config = await load(path.join(temp, 'nfvm.json'));
+    await setFileVersion(config.packs[0].files[0], 'v2');
+    expect(true).toBe(false);
+  });
+
+  it('should remove file if version does not exist', async () => {
+    const temp: string = await copyFixtureIntoTempDir(__dirname, 'pack');
+    const config: Core.Config = await load(path.join(temp, 'nfvm.json'));
+    await setFileVersion(config.packs[0].files[0], 'v2');
+    expect(true).toBe(false);
+  });
+
+  it('should leave file if version does not exist', async () => {
+    const temp: string = await copyFixtureIntoTempDir(__dirname, 'pack');
+    const config: Core.Config = await load(path.join(temp, 'nfvm.json'));
+    await setFileVersion(config.packs[0].files[0], 'v2');
+    expect(true).toBe(false);
   });
 });
 
