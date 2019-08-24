@@ -8,17 +8,17 @@ import * as path from 'path';
 import { load } from '../../config';
 import { Core } from '../../interfaces';
 import {
-  // setFileVersion,
+  setFileVersion,
   setVersion,
 } from '../pack';
+
+jest.unmock('jsonfile');
 
 describe('setFileVersion', () => {
   it('should switch version of file', async () => {
     const temp: string = await copyFixtureIntoTempDir(__dirname, 'pack');
-    const p = path.join(temp, 'files/v1/file1');
-    console.log('p: ', p);
-    const config: Core.Config = await load(p);
-    console.log('config: ', config);
+    const config: Core.Config = await load(path.join(temp, 'nfvm.json'));
+    await setFileVersion(config.packs[0].files[0], 'v2');
   });
 });
 

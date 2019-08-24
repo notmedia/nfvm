@@ -1,5 +1,3 @@
-jest.mock('jsonfile');
-
 import * as jsonfile from 'jsonfile';
 
 import { load, save } from '../../config';
@@ -13,6 +11,10 @@ const MOCK_FILE_INFO = [{
   data: MOCK_CONFIG,
   path: 'nfvm.json',
 }];
+
+beforeAll(() => {
+  jest.mock('jsonfile');
+});
 
 beforeEach(() => {
   jsonfile.__setMockFiles(MOCK_FILE_INFO);
@@ -36,8 +38,4 @@ describe('save', () => {
     const config: Core.Config = await load('test.json');
     expect(config.packs).toStrictEqual([]);
   });
-});
-
-afterAll(() => {
-  jest.unmock('jsonfile');
 });
