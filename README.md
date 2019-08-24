@@ -30,22 +30,21 @@ For comfort controll of file versioning you can apply version **ONLY** for the p
 
 | Parameter     | Type    | Description                              | Default Value|
 |---------------|---------|------------------------------------------|--------------|
-|name|String|pack name|''|
-|defaultVersion|String|name of default version|default|
-|currentVersion|String|name of current version|default|
-|versions|String[]|array of registered pack versions|[]|
+|alias|string|pack name|''|
+|version|string|name of current version|default|
+|availableVersions|string[]|array of available pack versions|[]|
 |files|File[]|array of `File` objects|[]|
 ### File
 | Parameter     | Type    | Description                              | Default Value|
 |---------------|---------|------------------------------------------|--------------|
-|filename|String|the name of file in destination folder|''|
-|destinationPath|String|full path to destination folder|''|
-|removeFileIfVersionNotExists|Boolean|if true then when file version does not exists removes the old version of file from the destination directory. Otherwise the old version stays.|true|
-|symlink|Boolean|if true then creates symlink to file version in destination directory instead of replacing it.|true|
-|versions|FileVersion[]|array of `File Version` objects|[]|
+|filename|string|the name of file in destination folder|''|
+|path|String|path to destination folder|''|
+|removeIfVersionNotExists|Boolean|if true then when file version does not exists removes the old version of file from the destination directory. Otherwise the old version stays.|true|
+|mode|string|switch file mode, can be `symlink` or `mv`. In symlink mode tool creates `symlink` to file version in destination `directory`. In `mv` mode tool simply moves file in destination folder.|'symlink'|
+|versions|FileVersion[]|`File Version` objects|[]|
 
 ### File Version
 | Parameter     | Type    | Description                              | Default Value|
 |---------------|---------|------------------------------------------|--------------|
-|name|String|file version name (also should be in Pack.versions)|''|
-|path|String|full path to file|''|
+|alias|string|file version alias (also should be in Pack.versions)|''|
+|path|string|path to file|''|
