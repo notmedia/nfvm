@@ -13,7 +13,11 @@ export async function makeConfig(packsInfo: { path: string, alias: string }[]): 
   return { packs };
 }
 
-export async function makePack(path: string, alias: string): Promise<Core.Pack> {
+export async function makePack(
+  path: string,
+  alias: string,
+  filePaths?: { filename: string, path: string }[],
+): Promise<Core.Pack> {
   const pack: Core.Pack = {
     alias,
     availableVersions: [],
@@ -22,27 +26,42 @@ export async function makePack(path: string, alias: string): Promise<Core.Pack> 
   };
 
   const directories: string[] = await getSubDirectories(path);
-  const files = {};
 
-  for (const directory of directories) {
+  const files: Core.File[] = [];
+
+  await Promise.all(directories.map(async directory => {
     const filesFromDirectory = await getFilesFromDirectory(directory);
     for (const fileFromDirectory of filesFromDirectory) {
       const filename = basename(fileFromDirectory);
-      files[filename] = {
+      files.push({
         filename,
-        mode: 'default',
-        path: fileFromDirectory,
+        mode: 'symlink',
+        path: filePaths ? mapFilenameToPath(filename, filePaths) : '',
         removeIfVersionNotExists: true,
-      };
+        versions: [{
+          alias: basename(directory),
+          path: fileFromDirectory,
+        }],
+      } as Core.File);
     }
-  }
+  }));
 
   pack.version = basename(directories[0]);
-  pack.files = Object.values(files);
+  pack.files = groupFilesByVersion(files);
 
   // pack.availableVersions = [...new Set(...pack.files.map(file => file.versions.map(version => version.alias)))];
 
   return pack;
+}
+
+export function mapFilenameToPath(filename: string, filePaths: { filename: string, path: string }[]): string {
+  const filePath = filePaths.find(item => item.filename === filename);
+
+  return filePath ? filePath.path : '';
+}
+
+export function groupFilesByVersion(files: Core.File[]): Core.File[] {
+  return files;
 }
 
 export function getSubDirectories(path: string): Promise<string[]> {

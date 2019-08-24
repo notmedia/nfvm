@@ -1,7 +1,4 @@
-export enum SwitchMode {
-  MV = 'mv',
-  SYMLINK = 'symlink',
-}
+export type SwitchMode = 'mv' | 'symlink';
 
 export declare type Config = {
   packs: Pack[];

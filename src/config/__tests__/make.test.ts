@@ -2,7 +2,14 @@
 import { copyFixtureIntoTempDir } from 'jest-fixtures';
 
 import { Core } from '../../interfaces';
-import { getFilesFromDirectory, getSubDirectories, makeConfig, makePack } from '../methods/make';
+import {
+  getFilesFromDirectory,
+  getSubDirectories,
+  groupFilesByVersion,
+  makeConfig,
+  makePack,
+  mapFilenameToPath,
+} from '../methods/make';
 
 describe('getSubDirectories', () => {
   it('should return all sub directories from given path', async () => {
@@ -23,6 +30,73 @@ describe('getFilesFromDirectory', () => {
   });
 });
 
+describe('mapFilenameToPath', () => {
+  it('should return path for filename', () => {
+    const path = mapFilenameToPath('test', [{ filename: 'test', path: 'testpath'}]);
+
+    expect(path).toBe('testpath');
+  });
+
+  it('should return empty path for filename which does not exist', () => {
+    const path = mapFilenameToPath('file', [{ filename: 'test', path: 'testpath'}]);
+
+    expect(path).toBe('');
+  });
+});
+
+describe('groupFilesByVersion', () => {
+  it('should return grouped files by version', () => {
+    const files: Core.File[] = [
+      {
+        filename: 'file1',
+        mode: 'symlink',
+        path: '',
+        removeIfVersionNotExists: true,
+        versions: [
+          {
+            alias: 'v1',
+            path: '/tmp/jest-fixture-E7wSn8/v1/file1',
+          },
+        ],
+      },
+      {
+        filename: 'file2',
+        mode: 'symlink',
+        path: '',
+        removeIfVersionNotExists: true,
+        versions:  [
+          {
+            alias: 'v1',
+            path: '/tmp/jest-fixture-E7wSn8/v1/file2',
+          },
+        ],
+      },
+      {
+        filename: 'file1',
+        mode: 'symlink',
+        path: '',
+        removeIfVersionNotExists: true,
+        versions: [
+          {
+            alias: 'v2',
+            path: '/tmp/jest-fixture-E7wSn8/v2/file1',
+          },
+        ],
+      },
+    ];
+
+    const groupedFiles: Core.File[] = groupFilesByVersion(files);
+
+    expect(groupedFiles.length).toBe(2);
+
+    const file1 = groupedFiles.find(file => file.filename === 'file1');
+    expect(file1).toBeDefined();
+    if (file1) {
+      expect(file1.versions.length).toBe(2);
+    }
+  });
+});
+
 describe('makePack', () => {
   it('should return valid pack', async () => {
     const temp: string = await copyFixtureIntoTempDir(__dirname, 'make-fixture');
@@ -34,7 +108,7 @@ describe('makePack', () => {
     expect(pack.availableVersions.length).toBe(2);
     expect(pack.availableVersions).toBe(['v1', 'v2']);
     expect(pack.files.length).toBe(2);
-    expect(pack.files.filter(file => file.mode === Core.SwitchMode.SYMLINK).length).toBe(2);
+    expect(pack.files.filter(file => file.mode === 'symlink').length).toBe(2);
     expect(pack.files.filter(file => file.removeIfVersionNotExists).length).toBe(2);
     expect(pack.files.map(file => file.filename)).toBe(['file1', 'file2']);
   });
