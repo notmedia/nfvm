@@ -2,6 +2,6 @@
 // tslint:disable-next-line
 const { version } = require('../../package.json');
 
-export function getVersion(): string {
+export function getNfvmVersion(): string {
   return version;
 }
