@@ -1,5 +1,8 @@
-// tslint:disable-next-line: no-implicit-dependencies
-import { copyFixtureIntoTempDir } from 'jest-fixtures';
+// tslint:disable: no-implicit-dependencies
+import {
+  cleanupTempDirs,
+  copyFixtureIntoTempDir,
+} from 'jest-fixtures';
 
 import { Core } from '../../interfaces';
 import {
@@ -163,4 +166,8 @@ describe('makeConfig', () => {
     expect(config.packs.length).toBe(1);
     expect(config.packs[0].alias).toBe('testMake');
   });
+});
+
+afterAll(() => {
+  cleanupTempDirs();
 });

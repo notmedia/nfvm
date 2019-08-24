@@ -1,6 +1,11 @@
-// tslint:disable-next-line: no-implicit-dependencies
-// import { copyFixtureIntoTempDir } from 'jest-fixtures';
+// tslint:disable: no-implicit-dependencies
+import {
+  cleanupTempDirs,
+  copyFixtureIntoTempDir,
+} from 'jest-fixtures';
+import * as path from 'path';
 
+import { load } from '../../config';
 import { Core } from '../../interfaces';
 import {
   // setFileVersion,
@@ -9,7 +14,11 @@ import {
 
 describe('setFileVersion', () => {
   it('should switch version of file', async () => {
-    // const temp: string = await copyFixtureIntoTempDir(__dirname, 'pack');
+    const temp: string = await copyFixtureIntoTempDir(__dirname, 'pack');
+    const p = path.join(temp, 'files/v1/file1');
+    console.log('p: ', p);
+    const config: Core.Config = await load(p);
+    console.log('config: ', config);
   });
 });
 
@@ -40,4 +49,8 @@ describe('setVersion', () => {
       .rejects
       .toEqual(new Error('Version does not exists.'));
   });
+});
+
+afterAll(() => {
+  cleanupTempDirs();
 });
