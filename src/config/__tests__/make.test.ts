@@ -104,13 +104,18 @@ describe('makePack', () => {
     const pack: Core.Pack = await makePack(temp, 'testMake');
 
     expect(pack.alias).toBe('testMake');
-    expect(pack.version).toBe('v1');
+    expect(['v1', 'v2'].includes(pack.version)).toBe(true);
     expect(pack.availableVersions.length).toBe(2);
-    expect(pack.availableVersions).toBe(['v1', 'v2']);
+    expect(pack.availableVersions.includes('v1')).toBe(true);
+    expect(pack.availableVersions.includes('v2')).toBe(true);
     expect(pack.files.length).toBe(2);
     expect(pack.files.filter(file => file.mode === 'symlink').length).toBe(2);
     expect(pack.files.filter(file => file.removeIfVersionNotExists).length).toBe(2);
-    expect(pack.files.map(file => file.filename)).toBe(['file1', 'file2']);
+
+    const filenames = pack.files.map(file => file.filename);
+
+    expect(filenames.includes('file1')).toBe(true);
+    expect(filenames.includes('file2')).toBe(true);
   });
 });
 

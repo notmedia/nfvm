@@ -48,8 +48,7 @@ export async function makePack(
 
   pack.version = basename(directories[0]);
   pack.files = groupFilesByVersion(files);
-
-  // pack.availableVersions = [...new Set(...pack.files.map(file => file.versions.map(version => version.alias)))];
+  pack.availableVersions = [...new Set(...pack.files.map(file => file.versions.map(version => version.alias)))];
 
   return pack;
 }
@@ -61,7 +60,18 @@ export function mapFilenameToPath(filename: string, filePaths: { filename: strin
 }
 
 export function groupFilesByVersion(files: Core.File[]): Core.File[] {
-  return files;
+  const groupedFiles: Core.File[] = [];
+
+  for (const file of files) {
+    const groupedFile: Core.File | undefined = groupedFiles.find(item => item.filename === file.filename);
+    if (groupedFile) {
+      groupedFile.versions = groupedFile.versions.concat(file.versions);
+    } else {
+      groupedFiles.push(file);
+    }
+  }
+
+  return groupedFiles;
 }
 
 export function getSubDirectories(path: string): Promise<string[]> {
