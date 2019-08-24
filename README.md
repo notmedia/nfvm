@@ -40,7 +40,7 @@ For comfort controll of file versioning you can apply version **ONLY** for the p
 |filename|string|the name of file in destination folder|''|
 |path|String|path to destination folder|''|
 |removeIfVersionNotExists|Boolean|if true then when file version does not exists removes the old version of file from the destination directory. Otherwise the old version stays.|true|
-|mode|string|switch file mode, can be `symlink` or `mv`. In symlink mode tool creates `symlink` to file version in destination `directory`. In `mv` mode tool simply moves file in destination folder.|'symlink'|
+|mode|string|switch file mode, can be `symlink` or `mv`. In symlink mode tool creates `symlink` to file version in destination folder. In `mv` mode tool simply moves file in destination folder.|'symlink'|
 |versions|FileVersion[]|`File Version` objects|[]|
 
 ### File Version
