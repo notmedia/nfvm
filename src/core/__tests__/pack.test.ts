@@ -29,3 +29,9 @@ describe('setVersion', () => {
       .toEqual(new Error('Version does not exists.'));
   });
 });
+
+describe('setFileVersion', () => {
+  it('should switch version of file', () => {
+
+  });
+});
