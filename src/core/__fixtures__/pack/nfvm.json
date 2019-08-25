@@ -3,6 +3,7 @@
     {
       "alias": "test",
       "availableVersions": [
+        "v3",
         "v2",
         "v1"
       ],
@@ -15,11 +16,11 @@
           "versions": [
             {
               "alias": "v2",
-              "path": "files/v2/file1"
+              "path": "files/v2"
             },
             {
               "alias": "v1",
-              "path": "files/v1/file1"
+              "path": "files/v1"
             }
           ]
         },
@@ -30,8 +31,12 @@
           "removeIfVersionNotExists": true,
           "versions": [
             {
+              "alias": "v3",
+              "path": "files/v3"
+            },
+            {
               "alias": "v1",
-              "path": "files/v1/file2"
+              "path": "files/v1"
             }
           ]
         }

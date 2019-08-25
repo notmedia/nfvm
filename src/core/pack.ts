@@ -15,4 +15,9 @@ export async function setVersion(pack: Core.Pack, version: string): Promise<Core
   };
 }
 
-export async function setFileVersion(_file: Core.File, _version: string) {}
+export async function setFileVersion(
+  _file: Core.File,
+  _version: string,
+) {
+
+}
