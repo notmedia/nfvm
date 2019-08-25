@@ -93,9 +93,12 @@ describe('groupFilesByVersion', () => {
     expect(groupedFiles.length).toBe(2);
 
     const file1 = groupedFiles.find(file => file.filename === 'file1');
+    const file2 = groupedFiles.find(file => file.filename === 'file2');
     expect(file1).toBeDefined();
-    if (file1) {
+    expect(file2).toBeDefined();
+    if (file1 && file2) {
       expect(file1.versions.length).toBe(2);
+      expect(file2.versions.length).toBe(1);
     }
   });
 });
