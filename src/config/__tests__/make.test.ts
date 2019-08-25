@@ -1,8 +1,11 @@
 // tslint:disable: no-implicit-dependencies
+import * as fs from 'fs';
 import {
   cleanupTempDirs,
   copyFixtureIntoTempDir,
 } from 'jest-fixtures';
+import { join } from 'path';
+import * as util from 'util';
 
 import { Core } from '../../interfaces';
 import {
@@ -13,6 +16,10 @@ import {
   makePack,
   mapFilenameToPath,
 } from '../methods/make';
+
+jest.unmock('jsonfile');
+
+const status = util.promisify(fs.stat);
 
 describe('getSubDirectories', () => {
   it('should return all sub directories from given path', async () => {
@@ -58,7 +65,7 @@ describe('groupFilesByVersion', () => {
         versions: [
           {
             alias: 'v1',
-            path: '/tmp/jest-fixture-E7wSn8/v1/file1',
+            path: '/tmp/jest-fixture-E7wSn8/v1',
           },
         ],
       },
@@ -70,7 +77,7 @@ describe('groupFilesByVersion', () => {
         versions:  [
           {
             alias: 'v1',
-            path: '/tmp/jest-fixture-E7wSn8/v1/file2',
+            path: '/tmp/jest-fixture-E7wSn8/v1',
           },
         ],
       },
@@ -82,7 +89,7 @@ describe('groupFilesByVersion', () => {
         versions: [
           {
             alias: 'v2',
-            path: '/tmp/jest-fixture-E7wSn8/v2/file1',
+            path: '/tmp/jest-fixture-E7wSn8/v2',
           },
         ],
       },
@@ -94,8 +101,10 @@ describe('groupFilesByVersion', () => {
 
     const file1 = groupedFiles.find(file => file.filename === 'file1');
     const file2 = groupedFiles.find(file => file.filename === 'file2');
+
     expect(file1).toBeDefined();
     expect(file2).toBeDefined();
+
     if (file1 && file2) {
       expect(file1.versions.length).toBe(2);
       expect(file2.versions.length).toBe(1);
@@ -118,10 +127,27 @@ describe('makePack', () => {
     expect(pack.files.filter(file => file.mode === 'symlink').length).toBe(2);
     expect(pack.files.filter(file => file.removeIfVersionNotExists).length).toBe(2);
 
-    const filenames = pack.files.map(file => file.filename);
+    const file1 = pack.files.find(item => item.filename === 'file1');
+    const file2 = pack.files.find(item => item.filename === 'file2');
 
-    expect(filenames.includes('file1')).toBe(true);
-    expect(filenames.includes('file2')).toBe(true);
+    expect(file1).toBeDefined();
+    expect(file2).toBeDefined();
+
+    if (file1 && file2) {
+      const file1v1 = file1.versions.find(item => item.alias === 'v1');
+      const file2v1 = file2.versions.find(item => item.alias === 'v1');
+
+      expect(file1v1).toBeDefined();
+      expect(file2v1).toBeDefined();
+
+      if (file1v1 && file2v1) {
+        const file1Status = await status(join(file1v1.path, file1.filename));
+        const file2Status = await status(join(file2v1.path, file2.filename));
+
+        expect(file1Status.isFile()).toBe(true);
+        expect(file2Status.isFile()).toBe(true);
+      }
+    }
   });
 
   it('should return valid pack with maped file paths', async () => {
@@ -130,11 +156,11 @@ describe('makePack', () => {
     const map = [
       {
         filename: 'file1',
-        path: 'testpath1/file1',
+        path: 'testpath1',
       },
       {
         filename: 'file2',
-        path: 'testpath2/file2',
+        path: 'testpath2',
       },
     ];
 
@@ -155,8 +181,9 @@ describe('makePack', () => {
     expect(filenames.includes('file2')).toBe(true);
 
     const paths = pack.files.map(file => file.path);
-    expect(paths.includes('testpath1/file1')).toBe(true);
-    expect(paths.includes('testpath2/file2')).toBe(true);
+
+    expect(paths.includes('testpath1')).toBe(true);
+    expect(paths.includes('testpath2')).toBe(true);
   });
 });
 

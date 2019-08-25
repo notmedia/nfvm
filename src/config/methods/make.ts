@@ -1,5 +1,10 @@
 import * as fs from 'fs';
-import { basename, join } from 'path';
+import {
+  basename,
+  dirname,
+  join,
+  parse,
+} from 'path';
 import * as util from 'util';
 
 import { Core } from '../../interfaces';
@@ -36,11 +41,11 @@ export async function makePack(
       files.push({
         filename,
         mode: 'symlink',
-        path: filePaths ? mapFilenameToPath(filename, filePaths) : '',
+        path: filePaths ? mapFilenameToPath(filename, filePaths) : parse(path).root,
         removeIfVersionNotExists: true,
         versions: [{
           alias: basename(directory),
-          path: fileFromDirectory,
+          path: dirname(fileFromDirectory),
         }],
       } as Core.File);
     }
