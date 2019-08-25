@@ -11,7 +11,7 @@
           "filename": "file1",
           "mode": "symlink",
           "path": "/",
-          "removeIfVersionNotExists": true,
+          "removeIfVersionNotExists": false,
           "versions": [
             {
               "alias": "v2",
