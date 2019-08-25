@@ -25,8 +25,8 @@
         },
         {
           "filename": "file2",
-          "mode": "symlink",
-          "path": "/",
+          "mode": "mv",
+          "path": "/work",
           "removeIfVersionNotExists": true,
           "versions": [
             {
