@@ -1,0 +1,47 @@
+{
+  "packs": [
+    {
+      "alias": "test",
+      "availableVersions": [
+        "v3",
+        "v2",
+        "v1"
+      ],
+      "files": [
+        {
+          "filename": "file1",
+          "mode": "symlink",
+          "path": "/",
+          "removeIfVersionNotExists": false,
+          "versions": [
+            {
+              "alias": "v2",
+              "path": "files/v2"
+            },
+            {
+              "alias": "v1",
+              "path": "files/v1"
+            }
+          ]
+        },
+        {
+          "filename": "file2",
+          "mode": "mv",
+          "path": "/work",
+          "removeIfVersionNotExists": true,
+          "versions": [
+            {
+              "alias": "v3",
+              "path": "files/v3"
+            },
+            {
+              "alias": "v1",
+              "path": "files/v1"
+            }
+          ]
+        }
+      ],
+      "version": "v1"
+    }
+  ]
+}

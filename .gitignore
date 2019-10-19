@@ -1,3 +1,4 @@
-./.nfvmrc.json
+dist/
 node_modules/
-.vscode/
+coverage/
+.DS_STORE
