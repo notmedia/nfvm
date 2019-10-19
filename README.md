@@ -12,6 +12,8 @@
   <img src="https://img.shields.io/github/license/notmedia/nfvm?color=50C72B&style=flat-square">
 </p>
 
+<img src="https://github.com/notmedia/nfvm/workflows/test/badge.svg">
+
 ## Installing
 ```bash
 $ npm i nfvm -g
